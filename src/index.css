@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-jost: "Jost", sans-serif;
+  --color-primary-black: #222222;
+}
