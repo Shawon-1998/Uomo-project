@@ -8,7 +8,6 @@ import Home from './Pages/Home.jsx';
 import About from './Pages/About.jsx';
 import RootLayout from './Components/layOut/RootLayout.jsx';
 
-
 const router = createBrowserRouter([
   {
     path: "/",

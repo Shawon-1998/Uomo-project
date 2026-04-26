@@ -4,23 +4,23 @@ export const navItems = [
     name: "HOME",
   },
   {
-    id: 1,
+    id: 2,
     name: "SHOP",
   },
   {
-    id: 1,
+    id: 3,
     name: "COLLECTION",
   },
   {
-    id: 1,
+    id: 4,
     name: "JOURNAL",
   },
   {
-    id: 1,
+    id: 5,
     name: "LOOKBOOK",
   },
   {
-    id: 1,
+    id: 6,
     name: "PAGES",
   },
 ];
