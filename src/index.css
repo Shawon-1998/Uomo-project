@@ -1,11 +1,17 @@
 @import "tailwindcss";
 @import "daisyui/daisyui.css";
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 @theme {
   --font-jost: "Jost", sans-serif;
   --color-primary-black: #222222;
   --color-primary-white: #ffffff;
   --color-thirdColor: #b9a16b;
+  --color-fourthColor: #ddc2b9;
 }
 
 .list-items {
@@ -13,4 +19,36 @@
 }
 .cartItems {
   @apply font-jost text-primary-white bg-thirdColor absolute -right-1.75 -bottom-0.75 flex h-4 w-4 items-center justify-center rounded-full text-[10px] font-medium;
+}
+/* bullet container */
+.swiper-pagination-bullet {
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid transparent;
+  background: transparent;
+  opacity: 1;
+  position: relative;
+}
+
+/* inner dot */
+.swiper-pagination-bullet::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ccc; /* same as your fourthColor */
+}
+
+/* active border */
+.swiper-pagination-bullet-active {
+  border: 1.5px solid black;
+}
+
+/* active inner dot */
+.swiper-pagination-bullet-active::after {
+  background: black;
 }
