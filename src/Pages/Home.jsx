@@ -1,6 +1,7 @@
 import React from 'react'
 import Banner3 from '../Components/Home/Banner3'
-import Category from '../Components/Home/Category'
+import Category from '../Components/Home/category/Category'
+
 
 
 const Home = () => {

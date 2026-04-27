@@ -1,21 +1,23 @@
 import React from 'react'
-import Container from '../Ui/Container'
-import { catergoryItem } from '../../Api/categoryData'
+import Container from '../../Ui/Container'
+import { catergoryItem } from '../../../Api/categoryData'
 
+
+import Card from './Card'
 const Category = () => {
     return (
         <>
-            <section>
+            <section className='mt-25.25 mb-23.5'>
                 <Container >
-                    <div className='flex'>
+                    <div className={`w-full  grid grid-cols-4 gap-7.5`}>
                         {catergoryItem?.map((item, index) => {
                             return (
-                                <div className='w-full h-150 bg-blue-600'>{item?.name}</div>
+                                <Card item={item} />
                             )
                         })}
                     </div>
                 </Container>
-            </section>
+            </section >
         </>
     )
 }

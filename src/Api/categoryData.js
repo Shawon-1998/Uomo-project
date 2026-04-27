@@ -1,23 +1,24 @@
 import catergoryImagewomen from "../assests/images/women.png";
 import catergoryImagemen from "../assests/images/men.png";
 import catergoryImagekids from "../assests/images/kid.png";
+import catergoryImagebg from "../assests/images/bg.png";
 
 export const catergoryItem = [
   {
     id: 1,
-    name: "WOMEN COLLECTION",
+    name: "WOMEN",
     link: "/women",
     image: catergoryImagewomen,
   },
   {
     id: 2,
-    name: "MEN COLLECTION",
+    name: "MEN",
     link: "/men",
     image: catergoryImagemen,
   },
   {
     id: 3,
-    name: "KIDS COLLECTION",
+    name: "KIDS ",
     link: "/kids",
     image: catergoryImagekids,
   },
@@ -25,5 +26,6 @@ export const catergoryItem = [
     id: 4,
     name: "E-GIFT CARDS",
     link: "/gift",
+    image: catergoryImagebg,
   },
 ];
