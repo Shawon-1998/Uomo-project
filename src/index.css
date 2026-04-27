@@ -7,6 +7,13 @@ body {
   overflow-x: hidden;
 }
 @theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1410px;
+
   --font-jost: "Jost", sans-serif;
   --color-primary-black: #222222;
   --color-primary-white: #ffffff;
@@ -20,35 +27,47 @@ body {
 .cartItems {
   @apply font-jost text-primary-white bg-thirdColor absolute -right-1.75 -bottom-0.75 flex h-4 w-4 items-center justify-center rounded-full text-[10px] font-medium;
 }
-/* bullet container */
-.swiper-pagination-bullet {
-  width: 30px;
-  height: 30px;
-  border-radius: 9999px;
-  display: inline-flex;
+
+/* keen-slider css */
+[class^="number-slide"],
+[class*=" number-slide"] {
+  background: grey;
+  display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid transparent;
-  background: transparent;
-  opacity: 1;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 300px;
+  max-height: 100vh;
+}
+
+.navigation-wrapper {
   position: relative;
 }
 
-/* inner dot */
-.swiper-pagination-bullet::after {
-  content: "";
-  width: 6px;
-  height: 6px;
+.dots {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 10px;
+  height: 10px;
+  background: #c5c5c5;
   border-radius: 50%;
-  background: #ccc; /* same as your fourthColor */
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
 }
 
-/* active border */
-.swiper-pagination-bullet-active {
-  border: 1.5px solid black;
+.dot:focus {
+  outline: none;
 }
 
-/* active inner dot */
-.swiper-pagination-bullet-active::after {
-  background: black;
+.dot.active {
+  background: #000;
 }
+/* keen-slider css */

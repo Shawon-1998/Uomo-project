@@ -1,13 +1,13 @@
 import React from 'react'
-import Banner from '../Components/Home/Banner'
-// import Banner2 from '../Components/Home/Banner2'
+import Banner3 from '../Components/Home/Banner3'
+import Category from '../Components/Home/Category'
 
 
 const Home = () => {
   return (
     <>
-      <Banner />
-      {/* <Banner2 /> */}
+      <Banner3 />
+      <Category />
     </>
   )
 }

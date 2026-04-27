@@ -16,7 +16,7 @@ const Header = () => {
               <ul className="flex gap-11 ml-14 ">
                 {navItems?.map((items) => {
                   return <li className="list-items 
-                " key={items.id}>{items.name}</li>;
+                " key={items?.id}>{items?.name}</li>;
                 })}
               </ul>
             </div>
