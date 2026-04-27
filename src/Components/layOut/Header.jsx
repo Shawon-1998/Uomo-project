@@ -3,6 +3,7 @@ import Image from "../common/Image";
 import logo from "/images/logo.png";
 import Container from "../Ui/Container";
 import { navItems } from "../../Api/navData";
+import ListItem from "../common/ListItem";
 
 const Header = () => {
   const cartItems = 3;
@@ -15,8 +16,8 @@ const Header = () => {
               <Image src={logo} />
               <ul className="flex gap-11 ml-14 ">
                 {navItems?.map((items) => {
-                  return <li className="list-items 
-                " key={items?.id}>{items?.name}</li>;
+                  return <ListItem className="list-items cursor-pointer 
+                " key={items?.id}>{items?.name}</ListItem>;
                 })}
               </ul>
             </div>
