@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Container from '../Ui/Container'
 import { productData } from '../../Api/productItems'
 import ListItem from '../common/ListItem'
+import Products from '../common/Products'
 
 const TrendyProducts = () => {
     const [active, setActive] = useState("")
@@ -24,6 +25,7 @@ const TrendyProducts = () => {
                             })
                         }
                     </ul>
+                    <Products />
                 </Container>
             </section>
         </>

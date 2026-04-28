@@ -10,9 +10,9 @@ const Category = () => {
             <section className='mt-25.25 mb-23.5'>
                 <Container >
                     <div className={`w-full  grid grid-cols-4 gap-7.5`}>
-                        {catergoryItem?.map((item, index) => {
+                        {catergoryItem?.map((item) => {
                             return (
-                                <Card item={item} />
+                                <Card key={item?.id} item={item} />
                             )
                         })}
                     </div>

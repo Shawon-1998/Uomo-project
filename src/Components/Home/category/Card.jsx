@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Image from '../../common/Image'
+
 const Card = ({ item }) => {
+
     return (
         <div key={item?.id} className={`${item?.id == 1 && 'col-span-2 row-span-2'} ${item?.id == 2 && 'col-span-2 row-span-1 '} relative`} >
             <Image src={item?.image} />

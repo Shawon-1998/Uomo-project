@@ -10,8 +10,8 @@ body {
   --breakpoint-*: initial;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1170px;
   --breakpoint-2xl: 1410px;
 
   --font-jost: "Jost", sans-serif;
@@ -42,17 +42,14 @@ body {
   height: 300px;
   max-height: 100vh;
 }
-
 .navigation-wrapper {
   position: relative;
 }
-
 .dots {
   display: flex;
   padding: 10px 0;
   justify-content: center;
 }
-
 .dot {
   border: none;
   width: 10px;
@@ -63,11 +60,9 @@ body {
   padding: 5px;
   cursor: pointer;
 }
-
 .dot:focus {
   outline: none;
 }
-
 .dot.active {
   background: #000;
 }
