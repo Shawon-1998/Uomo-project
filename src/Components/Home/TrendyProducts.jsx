@@ -1,14 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../Ui/Container'
 import { productData } from '../../Api/productItems'
 import ListItem from '../common/ListItem'
 import Products from '../common/Products'
+import axios from 'axios'
 
 const TrendyProducts = () => {
+    const [product, setProduct] = useState([])
     const [active, setActive] = useState("")
     const handleActive = () => {
         alert("asdf")
     }
+
+    // useEffect(() => {
+    //     fetch('https://dummyjson.com/products')
+    //         .then(res => res.json())
+    //         .then((item) => setProduct(item.products))
+    // }, []);
+
+    useEffect(() => {
+        async function getProduct() {
+            let res = await axios.get('https://dummyjson.com/products')
+                .then((api) => {
+                    setProduct(api.data.products)
+                }).catch((err) => {
+                    throw new Error(err.message ? err.message : "This is a custom error message");
+                })
+        }
+        getProduct()
+    }, [])
     return (
         <>
             <section>
@@ -18,14 +38,23 @@ const TrendyProducts = () => {
                         {
                             productData?.map((item) => {
                                 return (
-                                    <ListItem onClick={handleActive} className={`cursor-pointer`} key={item.id}>
+                                    <ListItem onClick={handleActive} className={`cursor-pointer`} >
                                         {item.name}
                                     </ListItem>
                                 )
                             })
                         }
                     </ul>
-                    <Products />
+                    <div className='grid grid-cols-4 gap-x-7.5 gap-y-15'>
+                        {
+                            product?.map((item) => {
+                                return (
+                                    <Products key={item.id}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
                 </Container>
             </section>
         </>

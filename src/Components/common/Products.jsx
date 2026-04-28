@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import productImage from '../../assests/images/images.png'
 import Image from './Image'
-const Products = () => {
+const Products = ({ item }) => {
+
     return (
-        <div className='w-82.5 font-jost  text-primary-black '>
+        <div key={item} className='w-82.5 font-jost  text-primary-black '>
             <div className='overflow-hidden  group relative'>
                 <Image src={productImage} />
                 <button className='absolute bg-primary-white text-primary-black  block w-full pt-4 pb-2.5 px-27.5 cursor-pointer md:bottom-0 font-medium md:group-hover:visible invisible md:group-hover:bottom-4 linear text-sm duration-300'> ADD TO CART</button>
