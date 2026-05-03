@@ -7,9 +7,10 @@ import axios from 'axios'
 
 const TrendyProducts = () => {
     const [product, setProduct] = useState([])
+    const [category, setCategory] = useState(1)
     const [active, setActive] = useState("")
-    const handleActive = () => {
-        alert("asdf")
+    const handleActive = (id) => {
+        setCategory(id)
     }
 
     // useEffect(() => {
@@ -34,11 +35,13 @@ const TrendyProducts = () => {
             <section>
                 <Container>
                     <h2 className='text-center font-jost text-[35px] font-normal '>OUR TRENDY <span className='font-bold'>PRODUCTS</span></h2>
-                    <ul className='flex justify-center gap-13.25 text-base text-secondary-grey font-medium mt-7.75 mb-10.25'>
+                    <ul className='flex justify-center gap-13.25  mt-7.75 mb-10.25'>
                         {
                             productData?.map((item) => {
                                 return (
-                                    <ListItem onClick={handleActive} className={`cursor-pointer`} >
+                                    <ListItem onClick={() => handleActive(item.id)}
+                                        className={`${category == item.id ? "text-base text-primary-black font-bold " : "text-base text-secondary-grey font-medium "} `}
+                                    >
                                         {item.name}
                                     </ListItem>
                                 )
@@ -49,7 +52,7 @@ const TrendyProducts = () => {
                         {
                             product?.map((item) => {
                                 return (
-                                    <Products key={item.id}
+                                    <Products item={item} key={item.id}
                                     />
                                 )
                             })

@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react'
 import productImage from '../../assests/images/images.png'
 import Image from './Image'
 const Products = ({ item }) => {
-
+    console.log(item)
     return (
         <div key={item} className='w-82.5 font-jost  text-primary-black '>
             <div className='overflow-hidden  group relative'>
-                <Image src={productImage} />
-                <button className='absolute bg-primary-white text-primary-black  block w-full pt-4 pb-2.5 px-27.5 cursor-pointer md:bottom-0 font-medium md:group-hover:visible invisible md:group-hover:bottom-4 linear text-sm duration-300'> ADD TO CART</button>
+                <Image src={item.thumbnail || productImage} />
+                <button className='absolute bg-primary-black text-primary-white  block w-full pt-4 pb-2.5 px-27.5 cursor-pointer md:bottom-0 font-medium md:group-hover:visible invisible md:group-hover:bottom-4 linear text-sm duration-300'> ADD TO CART</button>
             </div>
             <div className='mt-3.5 mb-2.25 flex justify-between'>
-                <h3 className='text-sm text-secondary-grey '>Dresses</h3>
+                <h3 className='text-sm text-secondary-grey '>{item.category}</h3>
                 <button>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_31_47)">
@@ -24,10 +24,10 @@ const Products = ({ item }) => {
                     </svg>
                 </button>
             </div>
-            <h2 className=''>Cropped Faux Leather Jacket</h2>
+            <h2 className=''>{item.title}</h2>
             <div className='flex gap-2'>
-                <del>$29</del>
-                <h4 className='text-red-500'>$29</h4>
+                <del>${item.price}</del>
+                <h4 className='text-red-500'>${((item.price) - (item.price * (10.48 / 100))).toFixed(2)}</h4>
             </div>
 
         </div>

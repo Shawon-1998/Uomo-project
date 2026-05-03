@@ -1,9 +1,8 @@
 import React from 'react'
 import Container from '../../Ui/Container'
 import { catergoryItem } from '../../../Api/categoryData'
-
-
 import Card from './Card'
+
 const Category = () => {
     return (
         <>

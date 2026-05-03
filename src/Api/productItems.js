@@ -1,7 +1,7 @@
 export const productData = [
   {
     id: 1,
-    name: "All",
+    name: "ALL",
   },
   {
     id: 2,
