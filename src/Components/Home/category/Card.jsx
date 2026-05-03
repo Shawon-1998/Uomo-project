@@ -10,7 +10,7 @@ const Card = ({ item }) => {
             <div className='absolute bottom-10 left-10'>
                 <h4 className='font-jost text-sm font-normal'>HOT LIST</h4>
                 <h2 className='text-[26px] font-medium font-jost'><span className='font-bold'>{item.name}</span> COLLECTION</h2>
-                <Link className="font-jost text-sm font-medium  after:bg-primary-black relative  leading-6  after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-[50%]" to={item.link} >SHOP NOW</Link>
+                <Link className="font-jost text-sm font-medium  hoverItems" to={item.link} >SHOP NOW</Link>
             </div>
         </div>
     )

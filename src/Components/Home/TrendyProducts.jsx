@@ -11,17 +11,14 @@ const TrendyProducts = () => {
     const [limitProduct, setLimitProduct] = useState([]);
     const [category, setCategory] = useState("all");
     const [active, setActive] = useState("");
+    const [show, setShow] = useState(true);
 
     const handleActive = (name) => {
         setCategory(name)
         if (name == "all") {
             setFilterCategoryProduct(product)
         } else {
-            let filterProduct = product.filter((item) => {
-                return (
-                    item.category == name
-                )
-            })
+            let filterProduct = product.filter((item) => item.category == name)
             setFilterCategoryProduct(filterProduct)
         }
 
@@ -37,18 +34,33 @@ const TrendyProducts = () => {
                 })
         }
         getProduct();
-
-    }, []);
+    },
+        []);
 
     useEffect(() => {
-        const limit = product.slice(0, 8);
+        let limit = product.slice(0, 8);
         setLimitProduct(limit);
     }, [product])
 
-    const handleSelect = () => {
-        let limit = product.slice(0, filterCategoryProduct.length - 1)
-        setLimitProduct(limit);
+    // const handleSelectAllProduct = () => {
+    //     let limit = product.slice(0, filterCategoryProduct.length - 1)
+    //     setLimitProduct(limit);
+    // }
+    // const handleSelectLessProduct = () => {
+    //     let limit = product.slice(0, 8);
+    //     setLimitProduct(limit);
+    // }
+    const handleSelectProduct = () => {
+        if (limitProduct.length <= 8) {
+            // let limit = product.slice(0, filterCategoryProduct.length - 1)
+            setLimitProduct(product);
+        } else {
+            let limit = product.slice(0, 8);
+            setLimitProduct(limit);
+        }
+        setShow(!show)
     }
+
     return (
         <>
             <section>
@@ -58,7 +70,8 @@ const TrendyProducts = () => {
                         {
                             productData?.map((item) => {
                                 return (
-                                    <ListItem onClick={() => handleActive(item.name)} className={`${category == item.name ? "text-base text-primary-black font-bold " : "text-base text-secondary-grey font-medium "}`}> {item.name} </ListItem>
+                                    <ListItem onClick={() => handleActive(item.name)} className={`${category == item.name ? " text-primary-black font-bold " :
+                                        " text-secondary-grey font-medium "} text-base`}> {item.name} </ListItem>
                                 )
                             })
                         }
@@ -68,9 +81,20 @@ const TrendyProducts = () => {
                             category == "all" ? limitProduct?.map((item) => <Products item={item} key={item.id} />) : filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)
                         }
                     </div>
-                    <div onClick={handleSelect} className='text-center mt-10.5 mb-25.5'>
-                        <button className="font-jost text-primary-black font-medium text-sm cursor-pointer after:bg-primary-black relative  leading-6  after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-[50%]">SEE ALL PRODUCTS</button>
-                    </div>
+                    {/* {limitProduct.length <= 8 ?
+                        (<div onClick={handleSelectAllProduct} className='text-center mt-10.5 mb-25.5'>
+                            <button className="font-jost text-primary-black font-medium text-sm cursor-pointer after:bg-primary-black relative  leading-6  after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-[50%]">SEE ALL PRODUCTS</button>
+                        </div>) :
+                        (<div onClick={handleSelectLessProduct} className='text-center mt-10.5 mb-25.5'>
+                            <button className="font-jost text-primary-black font-medium text-sm cursor-pointer after:bg-primary-black relative  leading-6  after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-[50%]">SEE LESS PRODUCTS</button>
+                        </div>)
+                    } */}
+
+                    {
+                        <div onClick={handleSelectProduct} className='text-center mt-10.5 mb-25.5'>
+                            <button className="font-jost text-primary-black font-medium text-sm cursor-pointer hoverItems">{show ? "SEE ALL PRODUCTS" : "SEE LEE PRODUCTS"}</button>
+                        </div>
+                    }
                 </Container>
             </section>
         </>
