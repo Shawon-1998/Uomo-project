@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import productImage from '../../assests/images/images.png'
 import Image from './Image'
 const Products = ({ item }) => {
-    console.log(item)
+
     return (
         <div key={item} className='w-82.5 font-jost  text-primary-black '>
             <div className='overflow-hidden  group relative'>

@@ -6,30 +6,49 @@ import Products from '../common/Products'
 import axios from 'axios'
 
 const TrendyProducts = () => {
-    const [product, setProduct] = useState([])
-    const [category, setCategory] = useState(1)
-    const [active, setActive] = useState("")
-    const handleActive = (id) => {
-        setCategory(id)
-    }
+    const [product, setProduct] = useState([]);
+    const [filterCategoryProduct, setFilterCategoryProduct] = useState([]);
+    const [limitProduct, setLimitProduct] = useState([]);
+    const [category, setCategory] = useState("all");
+    const [active, setActive] = useState("");
 
-    // useEffect(() => {
-    //     fetch('https://dummyjson.com/products')
-    //         .then(res => res.json())
-    //         .then((item) => setProduct(item.products))
-    // }, []);
+    const handleActive = (name) => {
+        setCategory(name)
+        if (name == "all") {
+            setFilterCategoryProduct(product)
+        } else {
+            let filterProduct = product.filter((item) => {
+                return (
+                    item.category == name
+                )
+            })
+            setFilterCategoryProduct(filterProduct)
+        }
+
+    };
 
     useEffect(() => {
-        async function getProduct() {
-            let res = await axios.get('https://dummyjson.com/products')
-                .then((api) => {
-                    setProduct(api.data.products)
+        function getProduct() {
+            axios.get('https://dummyjson.com/products')
+                .then((res) => {
+                    setProduct(res.data.products);
                 }).catch((err) => {
                     throw new Error(err.message ? err.message : "This is a custom error message");
                 })
         }
-        getProduct()
-    }, [])
+        getProduct();
+
+    }, []);
+
+    useEffect(() => {
+        const limit = product.slice(0, 8);
+        setLimitProduct(limit);
+    }, [product])
+
+    const handleSelect = () => {
+        let limit = product.slice(0, filterCategoryProduct.length - 1)
+        setLimitProduct(limit);
+    }
     return (
         <>
             <section>
@@ -39,24 +58,18 @@ const TrendyProducts = () => {
                         {
                             productData?.map((item) => {
                                 return (
-                                    <ListItem onClick={() => handleActive(item.id)}
-                                        className={`${category == item.id ? "text-base text-primary-black font-bold " : "text-base text-secondary-grey font-medium "} `}
-                                    >
-                                        {item.name}
-                                    </ListItem>
+                                    <ListItem onClick={() => handleActive(item.name)} className={`${category == item.name ? "text-base text-primary-black font-bold " : "text-base text-secondary-grey font-medium "}`}> {item.name} </ListItem>
                                 )
                             })
                         }
                     </ul>
                     <div className='grid grid-cols-4 gap-x-7.5 gap-y-15'>
                         {
-                            product?.map((item) => {
-                                return (
-                                    <Products item={item} key={item.id}
-                                    />
-                                )
-                            })
+                            category == "all" ? limitProduct?.map((item) => <Products item={item} key={item.id} />) : filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)
                         }
+                    </div>
+                    <div onClick={handleSelect} className='text-center mt-10.5 mb-25.5'>
+                        <button className="font-jost text-primary-black font-medium text-sm cursor-pointer after:bg-primary-black relative  leading-6  after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-[50%]">SEE ALL PRODUCTS</button>
                     </div>
                 </Container>
             </section>
