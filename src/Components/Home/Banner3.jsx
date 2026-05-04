@@ -5,6 +5,8 @@ import Image from '../common/Image';
 import { BannerData } from '../../Api/bannerData';
 
 const Banner3 = () => {
+
+
     const [currentSlide, setCurrentSlide] = useState(0)
     const [loaded, setLoaded] = useState(false)
     const [sliderRef, instanceRef] = useKeenSlider({
@@ -60,6 +62,7 @@ const Banner3 = () => {
                 </div>
 
                 {/* Navigation arrows */}
+
 
                 <div className='absolute lg:bottom-10 lg:left-35 bottom-5 left-20'>
                     {/* Dots */}

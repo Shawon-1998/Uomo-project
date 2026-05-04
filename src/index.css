@@ -17,7 +17,6 @@ body {
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1170px;
   --breakpoint-2xl: 1410px;
-
   --font-jost: "Jost", sans-serif;
   --color-primary-black: #222222;
   --color-primary-white: #ffffff;
@@ -70,3 +69,31 @@ body {
 /* keen-slider css */
 
 /* countdown timer styles*/
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #6d0404;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
