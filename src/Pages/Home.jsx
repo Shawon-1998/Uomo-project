@@ -3,6 +3,7 @@ import Banner3 from '../Components/Home/Banner3'
 import Category from '../Components/Home/category/Category'
 import TrendyProducts from '../Components/Home/TrendyProducts'
 import SpringCollection from '../Components/Home/SpringCollection'
+import StartingImage from '../Components/Home/StartingImage'
 
 
 
@@ -13,6 +14,7 @@ const Home = () => {
       <Category />
       <TrendyProducts />
       <SpringCollection />
+      <StartingImage />
     </>
   )
 }
