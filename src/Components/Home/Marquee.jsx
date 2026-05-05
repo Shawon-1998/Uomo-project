@@ -9,7 +9,7 @@ import { Autoplay } from 'swiper/modules';
 
 const Marquee = () => {
     return (
-        <section>
+        <section className='mb-25.75'>
             <h2 className='text-center'>marqueee</h2>
 
 

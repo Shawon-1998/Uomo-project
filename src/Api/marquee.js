@@ -3,11 +3,9 @@ import img2 from "../assests/Marquee/two.png";
 import img3 from "../assests/Marquee/three.png";
 import img4 from "../assests/Marquee/four.png";
 import img5 from "../assests/Marquee/five.png";
-import img6 from "../assests/Marquee/six.png";
-import img7 from "../assests/Marquee/seven.png";
-import img8 from "../assests/Marquee/eight.png";
-import img9 from "../assests/Marquee/nine.png";
-import img10 from "../assests/Marquee/ten.png";
+
+import img6 from "../assests/Marquee/nine.png";
+import img7 from "../assests/Marquee/ten.png";
 
 export const marqueeData = [
   {
@@ -40,14 +38,26 @@ export const marqueeData = [
   },
   {
     id: 8,
-    image: img8,
+    image: img3,
   },
   {
     id: 9,
-    image: img9,
+    image: img4,
   },
   {
     id: 10,
-    image: img10,
+    image: img5,
+  },
+  {
+    id: 11,
+    image: img3,
+  },
+  {
+    id: 12,
+    image: img4,
+  },
+  {
+    id: 13,
+    image: img5,
   },
 ];

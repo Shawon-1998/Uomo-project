@@ -6,17 +6,18 @@ import SpringCollection from '../Components/Home/SpringCollection'
 import StartingImage from '../Components/Home/StartingImage'
 import LimitedEdition from '../Components/Home/LimitedEdition'
 import Marquee from '../Components/Home/Marquee'
+import LatestNews from '../Components/Home/LatestNews'
 
 const Home = () => {
   return (
     <>
       <Banner3 />
-      {/* <Banner2 /> */}
       <Category />
       <TrendyProducts />
       <SpringCollection />
       <StartingImage />
       <LimitedEdition />
+      <LatestNews />
       <Marquee />
     </>
   )
