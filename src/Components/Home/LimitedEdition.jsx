@@ -3,7 +3,7 @@ import Container from '../Ui/Container'
 import { useSelector } from 'react-redux'
 import Products from '../common/Products'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import { Navigation, Mousewheel, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -29,7 +29,7 @@ const LimitedEdition = () => {
                     pagination={{
                         clickable: true,
                     }}
-                    modules={[Pagination, Navigation]}
+                    modules={[Navigation]}
                     className="mySwiper"
                     breakpoints={{
                         576: {
