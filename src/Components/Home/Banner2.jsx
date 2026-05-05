@@ -2,12 +2,10 @@
 import Image from "../common/Image";
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import { BannerData } from "../../Api/bannerData";
 
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 const Banner2 = () => {
     const pagination = {
         clickable: true,

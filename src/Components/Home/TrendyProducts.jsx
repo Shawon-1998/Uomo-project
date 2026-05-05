@@ -77,7 +77,7 @@ const TrendyProducts = () => {
                         {
                             productData?.map((item) => {
                                 return (
-                                    <ListItem onClick={() => handleActive(item.name)} className={`${category == item.name ? " text-primary-black font-bold " :
+                                    <ListItem key={item.id} onClick={() => handleActive(item.name)} className={`${category == item.name ? " text-primary-black font-bold " :
                                         " text-secondary-grey font-medium "} text-base`}> {item.name} </ListItem>
                                 )
                             })

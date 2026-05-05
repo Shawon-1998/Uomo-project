@@ -29,7 +29,7 @@ const Banner = () => {
                 {
                     BannerData?.map((item, index) => (
                         <a
-                            key={index}
+                            key={item.id}
                             href={`#item${index + 1}`}
                             onClick={() => setActive(index)}
                             className={`h-7.5 w-7.5 rounded-full flex items-center justify-center  ${active === index ? 'border-[1.5px] border-primary-black' : 'border border-transparent'}`}>
