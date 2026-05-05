@@ -4,6 +4,9 @@ import { productData } from '../../Api/productItems'
 import ListItem from '../common/ListItem'
 import Products from '../common/Products'
 import axios from 'axios'
+import Skeleton from './category/Skeleton'
+import { useDispatch } from 'react-redux'
+import { allProducts } from '../../Features/Product/productSlices'
 
 const TrendyProducts = () => {
     const [product, setProduct] = useState([]);
@@ -12,7 +15,24 @@ const TrendyProducts = () => {
     const [category, setCategory] = useState("all");
     const [active, setActive] = useState("");
     const [show, setShow] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const dispatch = useDispatch()
 
+    useEffect(() => {
+        function getProduct() {
+            axios.get('https://dummyjson.com/products')
+                .then((res) => {
+                    setProduct(res.data.products);
+                    setLoading(false)
+                    dispatch(allProducts(res.data.products))
+
+                }).catch((err) => {
+                    throw new Error(err.message ? err.message : "This is a custom error message");
+                })
+        }
+        getProduct();
+    },
+        []);
     const handleActive = (name) => {
         setCategory(name)
         if (name == "all") {
@@ -23,19 +43,6 @@ const TrendyProducts = () => {
         }
 
     };
-
-    useEffect(() => {
-        function getProduct() {
-            axios.get('https://dummyjson.com/products')
-                .then((res) => {
-                    setProduct(res.data.products);
-                }).catch((err) => {
-                    throw new Error(err.message ? err.message : "This is a custom error message");
-                })
-        }
-        getProduct();
-    },
-        []);
 
     useEffect(() => {
         let limit = product.slice(0, 8);
@@ -78,7 +85,18 @@ const TrendyProducts = () => {
                     </ul>
                     <div className='grid grid-cols-4 gap-x-7.5 gap-y-15'>
                         {
-                            category == "all" ? limitProduct?.map((item) => <Products item={item} key={item.id} />) : filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)
+                            !loading ? (category == "all" ? limitProduct?.map((item) => <Products item={item} key={item.id} />) : filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)) :
+                                <>
+                                    <Skeleton />
+                                    <Skeleton />
+                                    <Skeleton />
+                                    <Skeleton />
+                                    <Skeleton />
+                                    <Skeleton />
+                                    <Skeleton />
+                                    <Skeleton />
+
+                                </>
                         }
                     </div>
                     {/* {limitProduct.length <= 8 ?

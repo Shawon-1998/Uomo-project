@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import Container from '../Ui/Container'
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
+import { useSelector } from 'react-redux'
+import Products from '../common/Products'
 
 const LimitedEdition = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [loaded, setLoaded] = useState(false)
+    const getProduct = useSelector((state) => state.getProduct.value)
+    console.log(getProduct)
     const [sliderRef, instanceRef] = useKeenSlider({
         breakpoints: {
             "(min-width: 576px)": {
@@ -45,12 +49,13 @@ const LimitedEdition = () => {
                     <h2 className='text-center font-jost text-[35px] text-primary-black'>LIMITED <span className='font-bold'>EDITION</span></h2>
                     <div className="navigation-wrapper">
                         <div ref={sliderRef} className="keen-slider">
-                            <div className="keen-slider__slide number-slide1">1</div>
-                            <div className="keen-slider__slide number-slide2">2</div>
-                            <div className="keen-slider__slide number-slide3">3</div>
-                            <div className="keen-slider__slide number-slide4">4</div>
-                            <div className="keen-slider__slide number-slide5">5</div>
-                            <div className="keen-slider__slide number-slide6">6</div>
+                            {
+                                getProduct?.map((item) => (
+                                    <div className="keen-slider__slide flex flex-wrap gap-7.5 justify-center" key={item.id}>
+                                        <Products item={item} />
+                                    </div>
+                                ))
+                            }
                         </div>
                         {loaded && instanceRef.current && (
                             <>
@@ -59,19 +64,16 @@ const LimitedEdition = () => {
                                     onClick={(e) =>
                                         e.stopPropagation() || instanceRef.current?.prev()
                                     }
-                                    disabled={currentSlide === 0}
-                                    className="top-0 left-4"
+
+                                    className="-top-3 left-4"
                                 />
 
                                 <Arrow
                                     onClick={(e) =>
                                         e.stopPropagation() || instanceRef.current?.next()
                                     }
-                                    disabled={
-                                        currentSlide ===
-                                        instanceRef.current.track.details.slides.length - 1
-                                    }
-                                    className="top-0 right-4"
+
+                                    className="-top-3 right-4"
                                 />
                             </>
                         )}

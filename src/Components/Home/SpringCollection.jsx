@@ -3,7 +3,7 @@ import Container from '../Ui/Container'
 import { Link } from 'react-router'
 import Countdown from 'react-countdown';
 import Image from '../common/Image'
-import fragrance from '../../assests/images/Fragrance.jpg'
+import fragrance from '../../assests/images/StartingImage.png'
 const SpringCollection = () => {
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
 
