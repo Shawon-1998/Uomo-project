@@ -7,7 +7,7 @@ const LatestNews = () => {
         <section className='mt-14 mb-24'>
             <Container>
                 <h2 className='text-center font-jost text-[35px] text-primary-black mb-8.25'>LATEST <span className='font-bold'>NEWS</span></h2>
-                <div className='flex justify-center gap-9.5'>
+                <div className='flex justify-between'>
 
                     <CoolCard
                         price='8'
