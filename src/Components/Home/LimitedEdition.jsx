@@ -11,7 +11,6 @@ const LimitedEdition = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [loaded, setLoaded] = useState(false)
     const getProduct = useSelector((state) => state.getProduct.value)
-    console.log(getProduct)
 
     const pagination = {
         clickable: true,

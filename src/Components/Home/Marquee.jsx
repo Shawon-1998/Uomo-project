@@ -23,11 +23,12 @@ const Marquee = () => {
                 }}
                 speed={3000}
                 modules={[Autoplay]}
+
             >
                 {marqueeData.map((item) => (
                     <SwiperSlide key={item.id}>
                         <Image
-                            className="h-10 w-auto object-contain mx-auto"
+                            className="h-30! w-auto object-contain mx-auto"
                             src={item.image}
                         />
                     </SwiperSlide>

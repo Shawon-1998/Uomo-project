@@ -3,7 +3,6 @@ import img2 from "../assests/Marquee/two.png";
 import img3 from "../assests/Marquee/three.png";
 import img4 from "../assests/Marquee/four.png";
 import img5 from "../assests/Marquee/five.png";
-
 import img6 from "../assests/Marquee/nine.png";
 import img7 from "../assests/Marquee/ten.png";
 

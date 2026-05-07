@@ -7,6 +7,7 @@ import StartingImage from '../Components/Home/StartingImage'
 import LimitedEdition from '../Components/Home/LimitedEdition'
 import Marquee from '../Components/Home/Marquee'
 import LatestNews from '../Components/Home/LatestNews'
+import ProductDetails from '../Components/Home/ProductDetails'
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <LimitedEdition />
       <LatestNews />
       <Marquee />
+      <ProductDetails />
     </>
   )
 }
