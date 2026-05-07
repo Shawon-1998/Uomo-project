@@ -12,25 +12,29 @@ import BreadCrumbs from '../Components/common/BreadCrumbs';
 
 import { useParams } from 'react-router';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 const ProductDetails = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [value, setValue] = useState(0)
-    const [products, setProducts] = useState([])
-    const [productImage, setProductImg] = useState([])
+    // const [products, setProducts] = useState([])
+    // const [productImage, setProductImg] = useState([])
     const { id } = useParams();
-
-    async function data() {
-        await axios.get(`https://dummyjson.com/products/${id}`)
-            .then((res) => {
-                // setProducts(res.data)
-                // setLoading(0)
-                setProductImg(res.data.images)
-            })
-    }
-    useEffect(() => {
-        data()
-    }, [])
+    const getProduct = useSelector((state) => state.getProduct.value)
+    const singleProduct = getProduct?.find(
+        (item) => item.id == id
+    );
+    // async function data() {
+    //     await axios.get(`https://dummyjson.com/products/${id}`)
+    //         .then((res) => {
+    //             // setProducts(res.data)
+    //             // setLoading(0)
+    //             setProductImg(res.data.images)
+    //         })
+    // }
+    // useEffect(() => {
+    //     data()
+    // }, [])
 
     const handleProductDecrement = () => {
         if (value > 0) {
@@ -62,15 +66,11 @@ const ProductDetails = () => {
                                 className="mySwiper2"
                                 className="w-125! h-100!"
                             >
-                                {
-                                    productImage?.map((item, index) => (
-                                        <SwiperSlide key={index}>
-                                            <Image
-                                                src={item}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </SwiperSlide>
-                                    ))}
+                                {singleProduct?.images?.map((item, index) => (
+                                    <SwiperSlide key={index}>
+                                        <Image src={item} />
+                                    </SwiperSlide>
+                                ))}
                             </Swiper>
 
 
@@ -85,12 +85,9 @@ const ProductDetails = () => {
                                 className="mySwiper"
                                 className="w-125! h-25!"
                             >
-                                {productImage?.map((item, index) => (
+                                {singleProduct?.images?.map((item, index) => (
                                     <SwiperSlide key={index}>
-                                        <Image
-                                            src={item}
-                                            className="w-full h-full object-cover"
-                                        />
+                                        <Image src={item} />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
@@ -99,11 +96,11 @@ const ProductDetails = () => {
                         <div className='font-jost'>
                             <BreadCrumbs />
                             <h2 className='max-w-104.5 text-[22px] text-primary-black mt-10'>
-                                Lightweight Puffer Jacket With a Hood
+                                {singleProduct.title}
                             </h2>
                             <h2 className='mt-1.75 mb-6.25 font-medium 
                             text-[22px] text-primary-black'>
-                                $449
+                                ${singleProduct.price}
                             </h2 >
                             <p className='max-w-135 text-primary-black'>Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.</p>
                             <div className='flex items-center gap-28.75'>
@@ -138,6 +135,15 @@ const ProductDetails = () => {
                                     </button>
                                     <span className='inline-block leading-6 hoverItems'>SHARE</span>
                                 </div>
+                            </div>
+                            <div className='mt-8 mb-49.75 leading-6'>
+                                <h3 className='font-jost text-secondary-grey text-[13px]'>SKU:<span className='text-primary-black lowercase'>{singleProduct.sku} </span>
+                                </h3>
+                                <h3 className='uppercase font-jost text-secondary-grey text-[13px]'>Categories:<span className='text-primary-black lowercase'>{singleProduct.category}
+                                </span>
+                                </h3>
+                                <h3 className='font-jost text-secondary-grey text-[13px] uppercase'>Tags:<span className='text-primary-black lowercase'>{singleProduct.tags} </span>
+                                </h3>
                             </div>
                         </div>
                     </div>
