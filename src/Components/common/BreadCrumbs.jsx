@@ -7,7 +7,7 @@ const BreadCrumbs = ({ className }) => {
     //  console.log(pathName)
     return (
         <>
-            <div className={`${className} my-20 text-sm font-pop flex gap-2`}>
+            <div className={`${className} text-sm font-pop flex gap-2`}>
                 <span>Home</span>
                 <span>/</span>
                 <span>{pathName}</span>

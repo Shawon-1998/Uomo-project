@@ -4,6 +4,7 @@ import logo from "/images/logo.png";
 import Container from "../Ui/Container";
 import { navItems } from "../../Api/navData";
 import ListItem from "../common/ListItem";
+import { Link } from "react-router";
 
 const Header = () => {
   const cartItems = 3;
@@ -13,12 +14,24 @@ const Header = () => {
         <Container>
           <div className="flex items-center justify-between">
             <div className="flex items-center ">
-              <Image src={logo} />
-              <ul className="flex gap-11 ml-14 ">
-                {navItems?.map((items) => {
-                  return <ListItem className="list-items cursor-pointer 
-                " key={items?.id}>{items?.name}</ListItem>;
-                })}
+              <Link to='/home'>
+                <Image src={logo} />
+              </Link>
+              <ul className="flex gap-11 ml-14">
+                {navItems?.map((items) => (
+                  <li key={items.id}>
+                    <Link
+                      to={
+                        items.name === "Home"
+                          ? "/"
+                          : `/${items.name.toLowerCase()}`
+                      }
+                      className="list-items cursor-pointer"
+                    >
+                      {items.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <ul className="flex items-center gap-7.5">

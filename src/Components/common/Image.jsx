@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Image = ({ src, alt, className }) => {
+const Image = ({ src, alt, className, onClick }) => {
   return (
     <>
-      <img src={src} alt={alt} loading='lazy' className={className} />
+      <img src={src} alt={alt} loading='lazy' onClick={onClick} className={className} />
     </>
   )
 }

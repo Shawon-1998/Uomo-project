@@ -9,14 +9,17 @@ import About from './Pages/About.jsx';
 import RootLayout from './Components/layOut/RootLayout.jsx';
 import { store } from './App/store.js'
 import { Provider } from 'react-redux'
+import ProductDetails from './Pages/ProductDetails.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
     children: [
-      { index: true, Component: Home },
+
+      { path: "home", Component: Home },
       { path: "about", Component: About },
+      { path: "/details/:id", Component: ProductDetails },
     ],
   },
 ]);
