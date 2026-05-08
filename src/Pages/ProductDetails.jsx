@@ -9,14 +9,15 @@ import Container from '../Components/Ui/Container';
 import Image from '../Components/common/Image';
 import { catergoryItem } from '../Api/categoryData';
 import BreadCrumbs from '../Components/common/BreadCrumbs';
-
 import { useParams } from 'react-router';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-
+import reviewsImg from '../assests/images/reviews.png'
+import { Rate } from 'antd';
 const ProductDetails = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [value, setValue] = useState(0)
+    const [activeTab, setActiveTab] = useState("")
     // const [products, setProducts] = useState([])
     // const [productImage, setProductImg] = useState([])
     const { id } = useParams();
@@ -99,10 +100,10 @@ const ProductDetails = () => {
                                 {singleProduct.title}
                             </h2>
                             <h2 className='mt-1.75 mb-6.25 font-medium 
-                            text-[22px] text-primary-black'>
+                    text-[22px] text-primary-black'>
                                 ${singleProduct.price}
                             </h2 >
-                            <p className='max-w-135 text-primary-black'>Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.</p>
+                            <p className='max-w-135 text-primary-black'>{singleProduct.description}</p>
                             <div className='flex items-center gap-28.75'>
                                 <div className='flex pe-5.25 ps-4.25 items-center max-w-29 text-secondary-grey h-15 border border-[#E4E4E4] my-8.75 font-jost'>
                                     <button onClick={handleProductDecrement} className='cursor-pointer'>-</button>
@@ -142,13 +143,139 @@ const ProductDetails = () => {
                                 <h3 className='uppercase font-jost text-secondary-grey text-[13px]'>Categories:<span className='text-primary-black lowercase'>{singleProduct.category}
                                 </span>
                                 </h3>
-                                <h3 className='font-jost text-secondary-grey text-[13px] uppercase'>Tags:<span className='text-primary-black lowercase'>{singleProduct.tags} </span>
+                                <h3 className='font-jost text-secondary-grey text-[13px] uppercase'>Tags:<span className='text-primary-black lowercase'>{singleProduct?.tags?.map((item) => item)} </span>
                                 </h3>
                             </div>
                         </div>
                     </div>
+                    <div className='mt-10 flex flex-col items-center'>
+                        <div className='flex gap-6  '>
+                            <button
+                                onClick={() => setActiveTab("description")}
+                                className={`${activeTab === "description"
+                                    ? "text-primary-black font-medium  border-black "
+                                    : "text-gray-500"
+                                    } pb-2 hoverItems `}
+                            >
+                                Description
+                            </button>
+                            <button
+                                onClick={() => setActiveTab("info")}
+                                className={`${activeTab === "info"
+                                    ? "text-primary-black font-medium border-black"
+                                    : "text-gray-500"
+                                    } pb-2 hoverItems`}
+                            >
+                                Additional Information
+                            </button>
+                            <button
+                                onClick={() => setActiveTab("reviews")}
+                                className={`${activeTab === "reviews"
+                                    ? "text-primary-black font-medium border-black"
+                                    : "text-gray-500"
+                                    } pb-2 hoverItems`}
+                            >
+                                Reviews
+                            </button>
+                        </div>
+                        <div className='mt-6'>
+
+                            {activeTab === "description" && (
+                                <div>
+                                    <h3 className='font-medium font-jost'>
+                                        {singleProduct.title}
+                                    </h3>
+                                    <p className='max-w-232.5 leading-6.75'>
+                                        {singleProduct.description}
+                                    </p>
+                                    <div>
+                                        <div>
+
+                                            <div className='flex justify-between text-primary-black font-jost'>
+                                                <div>
+                                                    <h3 className='font-medium font-jost my-10'>Why choose product?</h3>
+                                                    <div className='flex gap-3 items-center'>
+                                                        <p><span className='text-5xl text-secondary-grey '>.</span> Creat by cotton fibric with soft and smooth</p>
+                                                    </div>
+                                                    <div className='flex gap-3 items-center'>
+                                                        <p><span className='text-5xl text-secondary-grey '>.</span> Creat by cotton fibric with soft and smooth</p>
+                                                    </div>
+                                                    <div className='flex gap-3 items-center'>
+                                                        <p><span className='text-5xl text-secondary-grey '>.</span> Creat by cotton fibric with soft and smooth</p>
+                                                    </div>
+
+                                                </div>
+                                                <div>
+                                                    <h3 className='font-medium font-jost my-10'>Sample Number List</h3>
+                                                    <div className='flex gap-3 items-center'>
+                                                        <p><span className='text-5xl text-secondary-grey '>.</span> Creat by cotton fibric with soft and smooth</p>
+                                                    </div>
+                                                    <div className='flex gap-3 items-center'>
+                                                        <p><span className='text-5xl text-secondary-grey '>.</span> Creat by cotton fibric with soft and smooth</p>
+                                                    </div>
+                                                    <div className='flex gap-3 items-center'>
+                                                        <p><span className='text-5xl text-secondary-grey '>.</span> Creat by cotton fibric with soft and smooth</p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            )}
+                            {activeTab === "info" && (
+                                <div>
+                                    <div className='flex gap-14.5'>
+                                        <ul className='flex flex-col gap-7.5 font-medium text-primary-black'>
+                                            <li>Weight</li>
+                                            <li>Dimensions</li>
+                                            <li>Size</li>
+                                            <li>Color</li>
+                                            <li>Storage</li>
+                                        </ul>
+                                        <ul className='flex flex-col gap-7.5'>
+                                            <li>{singleProduct.weight}</li>
+                                            <li>{singleProduct.dimensions.width},{singleProduct.dimensions.height},{singleProduct.dimensions.depth}</li>
+                                            <li>size</li>
+                                            <li>color</li>
+                                            <li>{singleProduct.availabilityStatus}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            )}
+                            {activeTab === "reviews" && (
+                                <div className='flex gap-14.5'>
+
+                                    <div>
+                                        {
+                                            singleProduct?.reviews?.map((item) => {
+                                                return (
+                                                    <div className='mb-10 font-jost text-secondary-grey' key={item.id}>
+                                                        <div className='flex gap-10 items-center'>
+                                                            <div>
+                                                                <Image src={reviewsImg} />
+                                                            </div>
+                                                            <div className='flex gap-30'>
+                                                                <h3 className='w-150'>{item.reviewerName}</h3>
+                                                                <span><Rate allowHalf defaultValue={item.rating} /> </span>
+                                                            </div>
+                                                        </div>
+                                                        <div className='ms-24'>
+                                                            <p>{item.date}</p>
+                                                            <p className='mt-5'>{item.comment}</p>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
                 </Container>
-            </section>
+            </section >
         </>
     );
 };

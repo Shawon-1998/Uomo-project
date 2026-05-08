@@ -13,7 +13,7 @@ const Products = ({ item }) => {
     }
     return (
         <div key={item.id} className='w-82.5 font-jost  text-primary-black '>
-            <div className='overflow-hidden  group relative'>
+            <div className='overflow-hidden cursor-pointer group relative'>
                 <Image onClick={handleProductDetails} src={item.thumbnail || productImage} />
                 <button className='absolute bg-primary-black text-primary-white  block w-full pt-4 pb-2.5 px-27.5 cursor-pointer md:bottom-0 font-medium md:group-hover:visible invisible md:group-hover:bottom-4 linear text-sm duration-300'> ADD TO CART</button>
             </div>

@@ -37,7 +37,7 @@ const NewsCard = ({ price, quality, time }) => {
                     </li>
                 </ul>
                 <div className="mt-6">
-                    <button className="btn btn-primary btn-block">Subscribe</button>
+                    <button className=' bg-primary-black text-primary-white  block w-full  px-23.75 cursor-pointer max-w-70 h-10 rounded-2xl font-medium  linear text-sm duration-300 uppercase'> Subscribe</button>
                 </div>
             </div>
         </div>
