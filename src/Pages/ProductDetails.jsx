@@ -173,9 +173,9 @@ const ProductDetails = () => {
                                 className={`${activeTab === "reviews"
                                     ? "text-primary-black font-medium border-black"
                                     : "text-gray-500"
-                                    } pb-2 hoverItems`}
+                                    } pb-2 hoverItems flex gap-1`}
                             >
-                                Reviews
+                                Reviews<p>({singleProduct?.reviews[0]?.rating})</p>
                             </button>
                         </div>
                         <div className='mt-6'>
