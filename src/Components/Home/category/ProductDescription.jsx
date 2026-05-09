@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import reviewsImg from '../../assests/images/reviews.png'
+import reviewsImg from '../../../assests/images/reviews.png'
 import { Rate } from 'antd';
-import Image from '../common/Image';
+import Image from '../../common/Image';
+import ProductReviewInputField from './ProductReviewInputField';
 
 const ProductDescription = ({ singleProduct }) => {
 
@@ -218,6 +219,8 @@ const ProductDescription = ({ singleProduct }) => {
                                         </div>
                                     ))
                                 }
+
+                                <ProductReviewInputField />
 
                             </div>
                         )

@@ -14,7 +14,8 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import reviewsImg from '../assests/images/reviews.png'
 import { Rate } from 'antd';
-import ProductDescription from '../Components/Home/ProductDescription';
+import ProductDescription from '../Components/Home/category/ProductDescription';
+import Button from '../Components/Home/category/Button';
 const ProductDetails = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [value, setValue] = useState(0)
@@ -110,7 +111,7 @@ const ProductDetails = () => {
                                     <span className='me-4.25 ms-6.5 w-2'>{value}</span>
                                     <button className='cursor-pointer' onClick={handleProductIncrement}>+</button>
                                 </div>
-                                <button className=' bg-primary-black text-primary-white  block w-full  px-23.75 cursor-pointer max-w-70 h-15 font-medium  linear text-sm duration-300'> ADD TO CART</button>
+                                <Button>ADD TO CART</Button>
                             </div>
                             <div className="flex gap-7.75 items-center">
                                 <div className='font-jost text-[13px] font-medium flex items-center gap-2.5'>
@@ -275,6 +276,7 @@ const ProductDetails = () => {
                         </div>
                     </div> */}
                     <ProductDescription singleProduct={singleProduct} />
+
                 </Container>
             </section >
         </>
