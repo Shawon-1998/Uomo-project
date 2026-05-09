@@ -34,7 +34,7 @@ const ProductReviewInputField = () => {
                             Save my name, email, and website in this browser for the next time I comment.
                         </label>
                     </fieldset>
-                    <Button className='mb-9.5'> SUBMIT</Button>
+                    <Button > SUBMIT</Button>
                 </form>
             </div>
         </section>

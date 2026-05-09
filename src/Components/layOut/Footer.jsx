@@ -7,7 +7,7 @@ import { FaPinterestP } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary-black text-primary-white font-jost pt-20 pb-10 px-6 md:px-12 lg:px-24">
+    <footer className="bg-secondary-grey text-primary-white font-jost pt-20 pb-10 px-6 md:px-12 lg:px-24">
       {/* Newsletter Section */}
       <div className="flex flex-col items-center text-center mb-24">
         <h2 className="text-white text-2xl font-medium tracking-widest mb-4">GET 10% OFF</h2>
@@ -16,7 +16,7 @@ const Footer = () => {
           <input
             type="email"
             placeholder="Your email address"
-            className="grow bg-[#2e2e2e] border-none px-5 py-4 text-sm text-white focus:ring-1 focus:ring-gray-500 outline-none"
+            className="grow bg-primary-white border-none px-5 py-4 text-sm text-primary-black focus:ring-1 focus:ring-gray-500 outline-none"
           />
           <button className="bg-[#555555] text-white px-10 py-4 text-xs font-bold tracking-widest hover:bg-[#666666] transition-colors">
             JOIN

@@ -83,7 +83,7 @@ const TrendyProducts = () => {
                             })
                         }
                     </ul>
-                    <div className='grid grid-cols-4 gap-x-7.5 gap-y-15'>
+                    <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-x-7.5 gap-y-15 justify-center'>
                         {
                             !loading ? (category == "all" ? limitProduct?.map((item) => <Products item={item} key={item.id} />) : filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)) :
                                 <>
@@ -95,18 +95,9 @@ const TrendyProducts = () => {
                                     <Skeleton />
                                     <Skeleton />
                                     <Skeleton />
-
                                 </>
                         }
                     </div>
-                    {/* {limitProduct.length <= 8 ?
-                        (<div onClick={handleSelectAllProduct} className='text-center mt-10.5 mb-25.5'>
-                            <button className="font-jost text-primary-black font-medium text-sm cursor-pointer after:bg-primary-black relative  leading-6  after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-[50%]">SEE ALL PRODUCTS</button>
-                        </div>) :
-                        (<div onClick={handleSelectLessProduct} className='text-center mt-10.5 mb-25.5'>
-                            <button className="font-jost text-primary-black font-medium text-sm cursor-pointer after:bg-primary-black relative  leading-6  after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-[50%]">SEE LESS PRODUCTS</button>
-                        </div>)
-                    } */}
 
                     {
                         <div onClick={handleSelectProduct} className='text-center mt-10.5 mb-25.5'>
