@@ -73,10 +73,9 @@ const TrendyProducts = () => {
         <>
             <section>
                 <Container>
-
                     <h2 className='text-center font-jost text-[35px] font-normal '>OUR TRENDY <span className='font-bold'>PRODUCTS</span></h2>
 
-                    <ul className='flex justify-center gap-13.25  mt-7.75 mb-10.25'>
+                    <ul className='md:flex justify-center gap-13.25  mt-7.75 mb-10.25'>
                         {
                             productData?.map((item) => {
                                 return (

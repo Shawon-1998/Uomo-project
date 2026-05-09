@@ -54,7 +54,7 @@ const Banner3 = () => {
                                 <Image
                                     src={item?.banner}
                                     alt={item?.alt}
-                                    className="w-full"
+                                    className="w-full px-15"
                                 />
                             </div>
                         ))

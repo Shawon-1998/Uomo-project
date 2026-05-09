@@ -15,25 +15,21 @@ const Header = () => {
     }
   };
   return (
-    <header className="pt-7.25 pb-4.75">
+    <header className="pt-7.25 pb-4.75 fixed top-0 bg-primary-white z-100 w-full">
       <nav >
         <Container>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center ">
-              <Link to='/home'>
+          <div className="flex  items-center justify-between">
+            <div className="md:flex  items-center ">
+              <Link to='/'>
                 <Image src={logo} />
               </Link>
-              <ul className="flex gap-11 ml-14">
+              <ul className="md:flex  gap-11 ml-14">
                 {navItems?.map((items) => (
                   <li onClick={() => handleActive(items.name)} key={items.id}>
                     <Link
-                      to={
-                        items.name === "Home"
-                          ? "/"
-                          : `/${items.name.toLowerCase()}`
-                      }
-                      className={`${category == items.name ? " text-primary-black font-bold " :
-                        " text-secondary-grey font-medium "} text-base`}>
+                      to={items.url}
+                      className={`${category == items.name ? " text-primary-black font-bold hoverItems" :
+                        " text-secondary-grey font-medium hoverItems"} text-base`}>
                       {items.name}
                     </Link>
                   </li>
