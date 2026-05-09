@@ -14,6 +14,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import reviewsImg from '../assests/images/reviews.png'
 import { Rate } from 'antd';
+import ProductDescription from '../Components/Home/ProductDescription';
 const ProductDetails = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [value, setValue] = useState(0)
@@ -59,7 +60,7 @@ const ProductDetails = () => {
                                     '--swiper-navigation-color': '#fff',
                                     '--swiper-pagination-color': '#fff',
                                 }}
-                                loop={true}
+
                                 spaceBetween={10}
                                 navigation={true}
                                 thumbs={{ swiper: thumbsSwiper }}
@@ -77,7 +78,6 @@ const ProductDetails = () => {
 
                             <Swiper
                                 onSwiper={setThumbsSwiper}
-                                loop={true}
                                 spaceBetween={10}
                                 slidesPerView={4}
                                 freeMode={true}
@@ -148,7 +148,7 @@ const ProductDetails = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='mt-10 flex flex-col items-center'>
+                    {/* <div className='mt-10 flex flex-col items-center'>
                         <div className='flex gap-6  '>
                             <button
                                 onClick={() => setActiveTab("description")}
@@ -273,7 +273,8 @@ const ProductDetails = () => {
                                 </div>
                             )}
                         </div>
-                    </div>
+                    </div> */}
+                    <ProductDescription singleProduct={singleProduct} />
                 </Container>
             </section >
         </>
