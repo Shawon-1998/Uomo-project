@@ -33,6 +33,7 @@ const TrendyProducts = () => {
         getProduct();
     },
         []);
+
     const handleActive = (name) => {
         setCategory(name)
         if (name == "all") {
@@ -72,18 +73,22 @@ const TrendyProducts = () => {
         <>
             <section>
                 <Container>
+
                     <h2 className='text-center font-jost text-[35px] font-normal '>OUR TRENDY <span className='font-bold'>PRODUCTS</span></h2>
+
                     <ul className='flex justify-center gap-13.25  mt-7.75 mb-10.25'>
                         {
                             productData?.map((item) => {
                                 return (
+
                                     <ListItem key={item.id} onClick={() => handleActive(item.name)} className={`${category == item.name ? " text-primary-black font-bold " :
                                         " text-secondary-grey font-medium "} text-base`}> {item.name} </ListItem>
+
                                 )
                             })
                         }
                     </ul>
-                    <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-x-7.5 gap-y-15 justify-center'>
+                    <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-x-7.5 gap-y-15 justify-center w-full mx-auto'>
                         {
                             !loading ? (category == "all" ? limitProduct?.map((item) => <Products item={item} key={item.id} />) : filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)) :
                                 <>

@@ -7,11 +7,13 @@ import StartingImage from '../Components/Home/StartingImage'
 import LimitedEdition from '../Components/Home/LimitedEdition'
 import Marquee from '../Components/Home/Marquee'
 import LatestNews from '../Components/Home/LatestNews'
+import BreadCrumbs from '../Components/common/BreadCrumbs'
 
 
 const Home = () => {
   return (
     <>
+
       <Banner3 />
       <Category />
       <TrendyProducts />

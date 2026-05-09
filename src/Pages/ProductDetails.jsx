@@ -55,7 +55,7 @@ const ProductDetails = () => {
         <>
             <section>
                 <Container>
-                    <div className='grid grid-cols-2'>
+                    <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
                         <div>
                             <Swiper
                                 style={{
@@ -68,11 +68,11 @@ const ProductDetails = () => {
                                 thumbs={{ swiper: thumbsSwiper }}
                                 modules={[FreeMode, Navigation, Thumbs]}
                                 className="mySwiper2"
-                                className="w-125! h-100!"
+                                className="max-w-125! max-h-130!"
                             >
                                 {singleProduct?.images?.map((item, index) => (
                                     <SwiperSlide key={index}>
-                                        <Image src={item} />
+                                        <Image className='cursor-pointer  border border-primary-black/40 p-3 rounded-2xl' src={item} />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
@@ -86,11 +86,11 @@ const ProductDetails = () => {
                                 watchSlidesProgress={true}
                                 modules={[FreeMode, Navigation, Thumbs]}
                                 className="mySwiper"
-                                className="w-125! h-25!"
+                                className="max-w-125! max-h-30! "
                             >
                                 {singleProduct?.images?.map((item, index) => (
                                     <SwiperSlide key={index}>
-                                        <Image src={item} />
+                                        <Image className='cursor-pointer border border-primary-black/40 p-3 rounded-2xl ' src={item} />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
@@ -276,6 +276,9 @@ const ProductDetails = () => {
                             )}
                         </div>
                     </div> */}
+                    <div>
+
+                    </div>
                     <ProductDescription singleProduct={singleProduct} />
                     <LimitedEdition className='mt-9.5 mb-25' name='RELATED' name2='PRODUCT' />
                 </Container>

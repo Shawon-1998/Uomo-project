@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "../common/Image";
 import logo from "/images/logo.png";
 import Container from "../Ui/Container";
@@ -8,6 +8,12 @@ import { Link } from "react-router";
 
 const Header = () => {
   const cartItems = 3;
+  const [category, setCategory] = useState("all");
+  const handleActive = (name) => {
+    setCategory(name)
+    if (name == "Home") {
+    }
+  };
   return (
     <header className="pt-7.25 pb-4.75">
       <nav >
@@ -19,15 +25,15 @@ const Header = () => {
               </Link>
               <ul className="flex gap-11 ml-14">
                 {navItems?.map((items) => (
-                  <li key={items.id}>
+                  <li onClick={() => handleActive(items.name)} key={items.id}>
                     <Link
                       to={
                         items.name === "Home"
                           ? "/"
                           : `/${items.name.toLowerCase()}`
                       }
-                      className="list-items cursor-pointer"
-                    >
+                      className={`${category == items.name ? " text-primary-black font-bold " :
+                        " text-secondary-grey font-medium "} text-base`}>
                       {items.name}
                     </Link>
                   </li>

@@ -1,10 +1,13 @@
 
 import React from 'react'
 import TrendyProducts from '../Components/Home/TrendyProducts'
+import BreadCrumbs from '../Components/common/BreadCrumbs'
 
 const ShopPage = () => {
     return (
-        <div>
+        <div className='mt-25'>
+
+            <BreadCrumbs />
             <TrendyProducts />
         </div>
     )
