@@ -17,6 +17,7 @@ import { Rate } from 'antd';
 import ProductDescription from '../Components/Home/category/ProductDescription';
 import Button from '../Components/Home/category/Button';
 import LimitedEdition from '../Components/Home/LimitedEdition';
+
 const ProductDetails = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [value, setValue] = useState(0)
@@ -53,7 +54,7 @@ const ProductDetails = () => {
 
     return (
         <>
-            <section>
+            <section className='mt-20'>
                 <Container>
                     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
                         <div>

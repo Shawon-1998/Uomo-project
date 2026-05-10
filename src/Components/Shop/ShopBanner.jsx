@@ -5,7 +5,7 @@ import ListItem from '../common/ListItem'
 import { shopBannerNav } from '../../Api/shopBannerData'
 import Container from '../Ui/Container'
 import { Link } from 'react-router'
-import BreadCrumbs from '../common/BreadCrumbs'
+
 
 
 const ShopBanner = () => {
@@ -13,7 +13,7 @@ const ShopBanner = () => {
         <section>
             <Image className='w-full mx-auto px-15 mb-9' src={shopBannerImg} />
             <Container className='relative'>
-                <ul className='flex gap-7.5 absolute bottom-43.75 '>
+                <ul className='flex gap-7.5 absolute bottom-34.75 left-0'>
                     {
                         shopBannerNav?.map((item) => {
                             return (
@@ -26,7 +26,6 @@ const ShopBanner = () => {
                         })
                     }
                 </ul>
-                <BreadCrumbs />
             </Container>
 
         </section>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router'
+import Container from '../Ui/Container'
 
 const BreadCrumbs = ({ className }) => {
     let location = useLocation()
