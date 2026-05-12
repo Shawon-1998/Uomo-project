@@ -7,20 +7,20 @@ import axios from 'axios'
 import Skeleton from './category/Skeleton'
 import { useDispatch } from 'react-redux'
 import { allProducts } from '../../Features/Product/productSlices'
+import { Link } from 'react-router'
 
 const TrendyProducts = () => {
     const [product, setProduct] = useState([]);
     const [filterCategoryProduct, setFilterCategoryProduct] = useState([]);
     const [limitProduct, setLimitProduct] = useState([]);
     const [category, setCategory] = useState("all");
-    const [active, setActive] = useState("");
     const [show, setShow] = useState(true);
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch()
 
     useEffect(() => {
         function getProduct() {
-            axios.get('https://dummyjson.com/products')
+            axios.get('https://dummyjson.com/products?limit=194')
                 .then((res) => {
                     setProduct(res.data.products);
                     setLoading(false)
@@ -50,24 +50,17 @@ const TrendyProducts = () => {
         setLimitProduct(limit);
     }, [product])
 
-    // const handleSelectAllProduct = () => {
-    //     let limit = product.slice(0, filterCategoryProduct.length - 1)
-    //     setLimitProduct(limit);
+
+    // const handleSelectProduct = () => {
+    //     if (limitProduct.length <= 8) {
+    //         setLimitProduct(product);
+    //     }
+    //     else {
+    //         let limit = product.slice(0, 8);
+    //         setLimitProduct(limit);
+    //     }
+    //     setShow(!show)
     // }
-    // const handleSelectLessProduct = () => {
-    //     let limit = product.slice(0, 8);
-    //     setLimitProduct(limit);
-    // }
-    const handleSelectProduct = () => {
-        if (limitProduct.length <= 8) {
-            // let limit = product.slice(0, filterCategoryProduct.length - 1)
-            setLimitProduct(product);
-        } else {
-            let limit = product.slice(0, 8);
-            setLimitProduct(limit);
-        }
-        setShow(!show)
-    }
 
     return (
         <>
@@ -90,23 +83,30 @@ const TrendyProducts = () => {
                     <div className='grid lg:grid-cols-4 sm:grid-cols-2 gap-x-7.5 gap-y-15 justify-center w-full mx-auto'>
                         {
                             !loading ? (category == "all" ? limitProduct?.map((item) => <Products item={item} key={item.id} />) : filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)) :
+
                                 <>
-                                    <Skeleton />
-                                    <Skeleton />
-                                    <Skeleton />
-                                    <Skeleton />
-                                    <Skeleton />
-                                    <Skeleton />
-                                    <Skeleton />
-                                    <Skeleton />
+                                    {
+                                        Array.from({ length: 8 }).map((item, index) => (
+                                            <Skeleton key={index} />
+                                        ))
+                                    }
                                 </>
                         }
                     </div>
 
                     {
-                        <div onClick={handleSelectProduct} className='text-center mt-10.5 mb-25.5'>
-                            <button className="font-jost text-primary-black font-medium text-sm cursor-pointer hoverItems">{show ? "SEE ALL PRODUCTS" : "SEE LEE PRODUCTS"}</button>
+                        <div className='text-center mt-10.5 mb-25.5'>
+                            <Link to='/shop'>
+                                <button className="font-jost text-primary-black font-medium text-sm cursor-pointer hoverItems"> SEE ALL PRODUCTS</button>
+                            </Link>
+
                         </div>
+
+                        // show product....
+
+                        // <div onClick={handleSelectProduct} className='text-center mt-10.5 mb-25.5'>
+                        //     <button className="font-jost text-primary-black font-medium text-sm cursor-pointer hoverItems">{show ? "SEE ALL PRODUCTS" : "SEE LEE PRODUCTS"}</button>
+                        // </div>
                     }
                 </Container>
             </section>

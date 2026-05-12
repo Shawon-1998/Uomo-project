@@ -14,7 +14,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import reviewsImg from '../assests/images/reviews.png'
 import { Rate } from 'antd';
-import ProductDescription from '../Components/Home/category/ProductDescription';
+import ProductDescription from '../Components/ProductDetails/ProductDescription';
 import Button from '../Components/Home/category/Button';
 import LimitedEdition from '../Components/Home/LimitedEdition';
 

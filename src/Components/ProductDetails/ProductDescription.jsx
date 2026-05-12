@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import reviewsImg from '../../../assests/images/reviews.png'
+import reviewsImg from '../../assests/images/reviews.png'
 import { Rate } from 'antd';
-import Image from '../../common/Image';
+import Image from '../common/Image';
 import ProductReviewInputField from './ProductReviewInputField';
 
 const ProductDescription = ({ singleProduct }) => {
@@ -48,8 +48,8 @@ const ProductDescription = ({ singleProduct }) => {
             value: "size"
         },
         {
-            label: "Color",
-            value: "color"
+            label: "order-quantity",
+            value: singleProduct?.minimumOrderQuantity
         },
         {
             label: "Storage",
@@ -59,10 +59,8 @@ const ProductDescription = ({ singleProduct }) => {
 
     return (
         <section>
-
             <div className='mt-10 flex flex-col items-center'>
 
-                {/* Tabs */}
                 <div className='flex gap-6'>
 
                     {
@@ -84,152 +82,106 @@ const ProductDescription = ({ singleProduct }) => {
                     }
 
                 </div>
-
-                {/* Content */}
                 <div className='mt-6'>
-
-                    {/* Description */}
                     {
                         activeTab === "description" && (
-
                             <div>
-
                                 <h3 className='font-medium font-jost'>
                                     {singleProduct?.title}
                                 </h3>
-
                                 <p className='max-w-232.5 leading-6.75'>
                                     {singleProduct?.description}
                                 </p>
-
                                 <div className='flex justify-between text-primary-black font-jost'>
-
                                     {
                                         ["Why choose product?", "Sample Number List"]
                                             .map((title, index) => (
-
                                                 <div key={index}>
-
                                                     <h3 className='font-medium my-10'>
                                                         {title}
                                                     </h3>
 
                                                     {
-                                                        features.map((item, i) => (
+                                                        features.map((item, index) => (
                                                             <div
-                                                                key={i}
+                                                                key={index}
                                                                 className='flex gap-3 items-center'
                                                             >
                                                                 <p>
                                                                     <span className='text-5xl text-secondary-grey'>
                                                                         .
                                                                     </span>
-
                                                                     {item}
                                                                 </p>
                                                             </div>
                                                         ))
                                                     }
-
                                                 </div>
                                             ))
                                     }
-
                                 </div>
-
                             </div>
                         )
                     }
-
-                    {/* Info */}
                     {
                         activeTab === "info" && (
-
                             <div className='flex flex-col gap-7.5'>
-
                                 {
                                     additionalInfo.map((item, index) => (
-
                                         <div
                                             key={index}
                                             className='flex gap-20'
                                         >
-
                                             <h3 className='font-medium text-primary-black w-30'>
                                                 {item.label}
                                             </h3>
-
                                             <p>{item.value}</p>
-
                                         </div>
                                     ))
                                 }
-
                             </div>
                         )
                     }
-
-                    {/* Reviews */}
                     {
                         activeTab === "reviews" && (
-
                             <div>
-
                                 {
                                     singleProduct?.reviews?.map((item, index) => (
-
                                         <div
                                             className='mb-10 font-jost text-secondary-grey'
                                             key={index}
                                         >
-
                                             <div className='flex gap-10 items-center'>
-
                                                 <div>
                                                     <Image src={reviewsImg} />
                                                 </div>
-
                                                 <div className='flex gap-30'>
-
                                                     <h3 className='w-150'>
                                                         {item.reviewerName}
                                                     </h3>
-
                                                     <span>
                                                         <Rate
                                                             allowHalf
                                                             defaultValue={item.rating}
                                                         />
                                                     </span>
-
                                                 </div>
-
                                             </div>
-
                                             <div className='ms-24'>
-
                                                 <p>{item.date}</p>
-
                                                 <p className='mt-5'>
                                                     {item.comment}
                                                 </p>
-
                                             </div>
-
                                         </div>
                                     ))
                                 }
-
                                 <ProductReviewInputField />
-
                             </div>
                         )
                     }
-
                 </div>
-
             </div>
-
         </section>
     )
 }

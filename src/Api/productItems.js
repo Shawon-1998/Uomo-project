@@ -5,18 +5,18 @@ export const productData = [
   },
   {
     id: 2,
-    name: "beauty",
+    name: "smartphones",
   },
   {
     id: 3,
-    name: "fragrances",
+    name: "mobile-accessories",
   },
   {
     id: 4,
-    name: "groceries",
+    name: "laptops",
   },
   {
     id: 5,
-    name: "furniture",
+    name: "mens-watches",
   },
 ];

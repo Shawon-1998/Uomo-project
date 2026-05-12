@@ -28,8 +28,8 @@ const Header = () => {
                   <li onClick={() => handleActive(items.name)} key={items.id}>
                     <Link
                       to={items.url}
-                      className={`${category == items.name ? " text-primary-black font-bold hoverItems" :
-                        " text-secondary-grey font-medium hoverItems"} text-base`}>
+                      className={`${category == items.name ? " text-primary-black font-bold " :
+                        " text-secondary-grey font-medium "} text-base`}>
                       {items.name}
                     </Link>
                   </li>

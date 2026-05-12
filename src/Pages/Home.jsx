@@ -20,7 +20,7 @@ const Home = () => {
       <SpringCollection />
       <StartingImage />
       <LimitedEdition />
-      <LatestNews />
+      {/* <LatestNews /> */}
       <Marquee />
 
     </>

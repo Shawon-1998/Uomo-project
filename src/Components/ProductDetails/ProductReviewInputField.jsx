@@ -1,6 +1,6 @@
 import React from 'react'
 import { Rate } from 'antd';
-import Button from './Button';
+import Button from '../Home/category/Button';
 const ProductReviewInputField = () => {
     return (
         <section>
