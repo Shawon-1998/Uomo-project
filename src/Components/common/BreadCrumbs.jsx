@@ -8,10 +8,10 @@ const BreadCrumbs = ({ className }) => {
     //  console.log(pathName)
     return (
         <>
-            <div className={`${className} text-sm font-pop flex gap-2`}>
-                <span>Home</span>
+            <div className={`font-jost font-medium ${className} text-sm  flex gap-2 capitalize`}>
+                <span className='hover:text-primary-red '>Home</span>
                 <span>/</span>
-                <span>{pathName}</span>
+                <span >{pathName}</span>
             </div>
         </>
     )

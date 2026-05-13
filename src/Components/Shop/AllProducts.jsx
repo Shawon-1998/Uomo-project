@@ -1,24 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Products from '../common/Products'
 import { useSelector } from 'react-redux'
+import axios from 'axios';
+import Button from '../Home/category/Button';
+import Skeleton from '../Home/category/Skeleton';
 
-const AllProducts = ({ item }) => {
-    const products = useSelector((state) => state.getProduct.value)
-    const [limitProduct, setLimitProduct] = useState([]);
-    // setLimitProduct(products.slice(0, 8))
-    console.log(products)
+const AllProducts = ({ products }) => {
+
+    const [limit, setLimit] = useState(8)
+    const visibleProducts = products?.slice(0, limit) || []
     return (
-        <div>
-            <div className='grid grid-cols-4'>
+        <section>
+            <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2'>
                 {
-                    products?.map((item) => {
-                        return (
-                            <Products key={item.id} item={item} />
-                        )
-                    })
+                    visibleProducts?.map((item) => <Products item={item} key={item.id} />)
                 }
             </div>
-        </div>
+
+            <Button
+                onClick={() => setLimit(prev => prev + 8)}
+                className='uppercase block mx-auto my-15'
+            >
+                Load More
+            </Button>
+        </section>
     )
 }
 

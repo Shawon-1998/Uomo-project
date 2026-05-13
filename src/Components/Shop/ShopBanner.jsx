@@ -7,8 +7,7 @@ import Container from '../Ui/Container'
 import { Link } from 'react-router'
 
 
-
-const ShopBanner = () => {
+const ShopBanner = ({ products }) => {
     return (
         <section>
             <Image className='w-full mx-auto px-15 mb-9' src={shopBannerImg} />

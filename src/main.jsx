@@ -20,15 +20,17 @@ const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: "about", Component: About },
       { path: "shop", Component: ShopPage },
-      { path: "/details/:id", Component: ProductDetails },
+      { path: "details/:id", Component: ProductDetails },
     ],
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
+  <StrictMode>
 
-  <Provider store={store}>
-    <RouterProvider router={router} />
-  </Provider>,
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>,
+  </StrictMode>
 
 )
