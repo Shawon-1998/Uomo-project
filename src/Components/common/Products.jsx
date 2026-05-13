@@ -12,7 +12,7 @@ const Products = ({ item }) => {
         navigate(`/details/${id}`)
     }
     return (
-        <div key={item.id} className='w-82.5 font-jost  text-primary-black '>
+        <div key={item.id} className='lg:w-82.5 w-50 font-jost  text-primary-black '>
             <div className='overflow-hidden cursor-pointer group relative'>
                 <Image onClick={handleProductDetails} src={item.thumbnail || productImage} />
                 <button className='absolute text-primary-white bg-primary-black hover:text-primary-red  block w-full pt-4 pb-2.5 px-27.5 cursor-pointer md:bottom-0 font-medium md:group-hover:visible invisible md:group-hover:bottom-6 linear text-sm duration-300'> ADD TO CART</button>

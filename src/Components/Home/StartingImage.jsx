@@ -8,8 +8,8 @@ const StartingImage = () => {
     return (
         <section className='mb-22.75'>
             <Container>
-                <div className='flex gap-7.5'>
-                    <div className='w-2/4 relative font-jost font-medium  group'>
+                <div className='flex lg:flex-row flex-col gap-7.5'>
+                    <div className='lg:w-2/4 w-full relative font-jost font-medium  group'>
                         <Image src={startingImage} className='h-99.5 opacity-' />
                         <div className='absolute z-50 left-12.5 bottom-12.5 text-primary-black group-hover:text-primary-white'>
                             <h3 className='text-lg'>STARTING AT $19</h3>
@@ -18,7 +18,7 @@ const StartingImage = () => {
                         </div>
                         <div className='absolute z-10 top-0 left-0 w-full h-full group-hover:bg-primary-red/85 transition-all duration-300 linear' />
                     </div>
-                    <div className='w-2/4 relative font-jost font-medium  group'>
+                    <div className='lg:w-2/4 relative font-jost font-medium w-full group'>
                         <Image src={startingImage} className='h-99.5 opacity-' />
                         <div className='absolute z-50 left-12.5 bottom-12.5 text-primary-black group-hover:text-primary-white'>
                             <h3 className='text-lg'>STARTING AT $19</h3>

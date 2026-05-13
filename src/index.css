@@ -4,7 +4,7 @@
 /* Common CSS */
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
   overflow-x: hidden;
 }
 .hoverItems {

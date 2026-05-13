@@ -32,8 +32,8 @@ const LimitedEdition = ({ name = "LIMITED", name2 = "EDITION", className }) => {
                         modules={[Navigation]}
                         className="mySwiper"
                         breakpoints={{
-                            576: {
-                                slidesPerView: 1,
+                            400: {
+                                slidesPerView: 2,
                                 spaceBetween: 10,
                             },
                             768: {

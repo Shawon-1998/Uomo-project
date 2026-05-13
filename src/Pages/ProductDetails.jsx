@@ -70,11 +70,11 @@ const ProductDetails = () => {
                                 thumbs={{ swiper: thumbsSwiper }}
                                 modules={[FreeMode, Navigation, Thumbs]}
                                 className="mySwiper2"
-                                className="max-w-125! max-h-130!"
+                                className="lg:w-125! w-110! lg:h-130! h-115!"
                             >
                                 {singleProduct?.images?.map((item, index) => (
                                     <SwiperSlide key={index}>
-                                        <Image className='cursor-pointer  border border-primary-black/40 p-3 rounded-2xl' src={item} />
+                                        <Image className='cursor-pointer  border w-full border-primary-black/40 p-3 rounded-2xl' src={item} />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
@@ -88,7 +88,7 @@ const ProductDetails = () => {
                                 watchSlidesProgress={true}
                                 modules={[FreeMode, Navigation, Thumbs]}
                                 className="mySwiper"
-                                className="max-w-125! max-h-30! "
+                                className="lg:w-125! w-110! max-h-30! "
                             >
                                 {singleProduct?.images?.map((item, index) => (
                                     <SwiperSlide key={index}>
@@ -99,7 +99,7 @@ const ProductDetails = () => {
 
                         </div>
                         <div className='font-jost'>
-                            <BreadCrumbs />
+                            <BreadCrumbs className='mt-5 l' />
                             <h2 className='max-w-104.5 text-[22px] text-primary-black mt-10'>
                                 {singleProduct.title}
                             </h2>
@@ -108,7 +108,7 @@ const ProductDetails = () => {
                                 ${singleProduct.price}
                             </h2 >
                             <p className='max-w-135 text-primary-black'>{singleProduct.description}</p>
-                            <div className='flex items-center gap-28.75'>
+                            <div className='flex items-center lg:gap-28.75 gap-10'>
                                 <div className='flex pe-5.25 ps-4.25 items-center max-w-29 text-secondary-grey h-15 border border-[#E4E4E4] my-8.75 font-jost'>
                                     <button onClick={handleProductDecrement} className='cursor-pointer'>-</button>
                                     <span className='me-4.25 ms-6.5 w-2'>{value}</span>

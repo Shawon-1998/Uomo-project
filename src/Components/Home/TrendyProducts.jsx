@@ -50,9 +50,9 @@ const TrendyProducts = () => {
         <>
             <section>
                 <Container>
-                    <h2 className='text-center font-jost text-[35px] font-normal '>OUR TRENDY <span className='font-bold'>PRODUCTS</span></h2>
+                    <h2 className='text-center font-jost lg:text-[35px] text-2xl font-normal '>OUR TRENDY <span className='font-bold'>PRODUCTS</span></h2>
 
-                    <ul className='md:flex justify-center gap-13.25  mt-7.75 mb-10.25'>
+                    <ul className='flex justify-center gap-4 lg:gap-13.25  mt-7.75 mb-10.25'>
                         {
                             productData?.map((item) => {
                                 return (
@@ -78,7 +78,7 @@ const TrendyProducts = () => {
                     </div>
 
                     {
-                        <div className='text-center mt-10.5 mb-25.5'>
+                        <div className='text-center mt-10.5 lg:mb-25.5 mb-15'>
                             <Link className="font-jost text-primary-black font-medium text-sm cursor-pointer hoverItems" to='/shop'>
                                 SEE ALL PRODUCTS
                             </Link>
