@@ -12,9 +12,9 @@ import { Link } from 'react-router'
 const TrendyProducts = () => {
     const [product, setProduct] = useState([]);
     const [filterCategoryProduct, setFilterCategoryProduct] = useState([]);
-    const [limitProduct, setLimitProduct] = useState([]);
-    const [category, setCategory] = useState("all");
-    const [show, setShow] = useState(true);
+    // const [limitProduct, setLimitProduct] = useState([]);
+    const [category, setCategory] = useState("smartphones");
+    // const [show, setShow] = useState(true);
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch()
 
@@ -22,33 +22,36 @@ const TrendyProducts = () => {
         function getProduct() {
             axios.get('https://dummyjson.com/products?limit=194')
                 .then((res) => {
-                    setProduct(res.data.products);
+                    const products = res.data.products
+                    setProduct(products)
+                    // setLimitProduct(products.slice(0, 8))
+                    const smartphoneProducts = products.filter(
+                        (item) => item.category === "smartphones"
+                    )
+
+                    setFilterCategoryProduct(smartphoneProducts)
+                    dispatch(allProducts(products))
                     setLoading(false)
-                    dispatch(allProducts(res.data.products))
 
                 }).catch((err) => {
                     throw new Error(err.message ? err.message : "This is a custom error message");
                 })
         }
         getProduct();
-    },
-        []);
+    }, []);
+
+    // useEffect(() => {
+    //     let limit = product.slice(0, 8);
+    //     setLimitProduct(limit);
+    // }, [product])
 
     const handleActive = (name) => {
         setCategory(name)
-        if (name == "all") {
-            setFilterCategoryProduct(product)
-        } else {
-            let filterProduct = product.filter((item) => item.category == name)
-            setFilterCategoryProduct(filterProduct)
-        }
 
-    };
-
-    useEffect(() => {
-        let limit = product.slice(0, 8);
-        setLimitProduct(limit);
-    }, [product])
+        setFilterCategoryProduct(
+            product.filter(item => item.category === name)
+        )
+    }
 
 
     // const handleSelectProduct = () => {
@@ -73,17 +76,29 @@ const TrendyProducts = () => {
                             productData?.map((item) => {
                                 return (
 
-                                    <ListItem key={item.id} onClick={() => handleActive(item.name)} className={`${category == item.name ? " text-primary-black font-bold " :
+                                    <ListItem key={item.id} onClick={() => handleActive(item.name)} className={`${category == item.name ? " text-primary-black font-bold  hoverItems" :
                                         " text-secondary-grey font-medium "} text-base uppercase`}> {item.name} </ListItem>
 
                                 )
                             })
                         }
                     </ul>
-                    <div className='grid lg:grid-cols-4 sm:grid-cols-2 gap-x-7.5 gap-y-15 justify-center w-full mx-auto'>
+                    {/* <div className='grid lg:grid-cols-4 sm:grid-cols-2 gap-x-7.5 gap-y-15 justify-center w-full mx-auto'>
                         {
                             !loading ? (category == "all" ? limitProduct?.map((item) => <Products item={item} key={item.id} />) : filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)) :
 
+                                <>
+                                    {
+                                        Array.from({ length: 8 }).map((item, index) => (
+                                            <Skeleton key={index} />
+                                        ))
+                                    }
+                                </>
+                        }
+                    </div> */}
+                    <div className='grid lg:grid-cols-4 sm:grid-cols-2 gap-x-7.5 gap-y-15 justify-center w-full mx-auto'>
+                        {
+                            !loading ? (filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)) :
                                 <>
                                     {
                                         Array.from({ length: 8 }).map((item, index) => (
