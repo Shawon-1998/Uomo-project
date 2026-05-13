@@ -23,7 +23,7 @@ const TrendyProducts = () => {
                     const products = res.data.products
                     setProduct(products)
                     const smartphoneProducts = products.filter(
-                        (item) => item.category === "smartphones"
+                        (item) => item.category === "tablets"
                     )
 
                     setFilterCategoryProduct(smartphoneProducts)

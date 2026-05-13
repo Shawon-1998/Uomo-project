@@ -66,6 +66,7 @@ const ProductDetails = () => {
 
                                 spaceBetween={10}
                                 navigation={true}
+                                loop={true}
                                 thumbs={{ swiper: thumbsSwiper }}
                                 modules={[FreeMode, Navigation, Thumbs]}
                                 className="mySwiper2"

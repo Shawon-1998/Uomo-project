@@ -11,17 +11,22 @@ import { useSelector } from 'react-redux'
 const ShopPage = () => {
 
     const products = useSelector(state => state.getProduct.value)
+    const [selectedCategory, setSelectedCategory] = useState("all")
 
+    const filteredProducts =
+        selectedCategory === "all"
+            ? products
+            : products.filter((item) => item.category === selectedCategory)
     return (
         <main className='mt-25'>
-            <ShopBanner products={products} />
+            <ShopBanner setSelectedCategory={setSelectedCategory} />
 
             <Container>
                 <div className='flex justify-between'>
                     <BreadCrumbs />
-                    <ShortAndView products={products} />
+                    <ShortAndView filteredProducts={filteredProducts} />
                 </div>
-                <AllProducts products={products} />
+                <AllProducts filteredProducts={filteredProducts} />
             </Container>
 
         </main>

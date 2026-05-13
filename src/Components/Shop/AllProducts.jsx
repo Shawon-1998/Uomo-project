@@ -5,10 +5,10 @@ import axios from 'axios';
 import Button from '../Home/category/Button';
 import Skeleton from '../Home/category/Skeleton';
 
-const AllProducts = ({ products }) => {
+const AllProducts = ({ filteredProducts }) => {
 
     const [limit, setLimit] = useState(8)
-    const visibleProducts = products?.slice(0, limit) || []
+    const visibleProducts = filteredProducts?.slice(0, limit) || []
     return (
         <section>
             <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2'>

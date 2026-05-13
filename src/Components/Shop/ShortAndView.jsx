@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ShortAndView = ({ products }) => {
+const ShortAndView = ({ filteredProducts }) => {
     return (
         <section>
 
