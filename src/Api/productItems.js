@@ -9,14 +9,10 @@ export const productData = [
   },
   {
     id: 2,
-    name: "mobile-accessories",
+    name: "mens-watches",
   },
   {
     id: 3,
     name: "laptops",
-  },
-  {
-    id: 4,
-    name: "mens-watches",
   },
 ];

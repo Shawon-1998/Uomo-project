@@ -64,7 +64,7 @@ const TrendyProducts = () => {
                             })
                         }
                     </ul>
-                    <div className='grid lg:grid-cols-4 sm:grid-cols-2 gap-x-7.5 lg:gap-y-15 gap-y-5 justify-center w-full mx-auto'>
+                    <div className='grid lg:grid-cols-4 grid-cols-2 gap-x-7.5 lg:gap-y-15 gap-y-5 justify-center mx-auto'>
                         {
                             !loading ? (filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)) :
                                 <>
