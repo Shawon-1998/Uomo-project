@@ -22,10 +22,10 @@ const LimitedEdition = ({ name = "LIMITED", name2 = "EDITION", className }) => {
         <>
             <section className={`${className}`}>
                 <Container>
-                    <h2 className='text-center font-jost text-[35px] text-primary-black mb-8.25'>{name} <span className='font-bold'>{name2}</span></h2>
+                    <h2 className='text-center font-jost lg:text-[35px] text-2xl text-primary-black mb-8.25'>{name} <span className='font-bold'>{name2}</span></h2>
                     <Swiper
                         navigation={true}
-                        spaceBetween={30}
+                        spaceBetween={20}
                         pagination={{
                             clickable: true,
                         }}

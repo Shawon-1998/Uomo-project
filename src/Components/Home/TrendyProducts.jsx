@@ -52,19 +52,19 @@ const TrendyProducts = () => {
                 <Container>
                     <h2 className='text-center font-jost lg:text-[35px] text-2xl font-normal '>OUR TRENDY <span className='font-bold'>PRODUCTS</span></h2>
 
-                    <ul className='flex justify-center gap-4 lg:gap-13.25  mt-7.75 mb-10.25'>
+                    <ul className='flex justify-center gap-4 lg:gap-13.25  mt-7.75 mb-10.25 whitespace-nowrap '>
                         {
                             productData?.map((item) => {
                                 return (
 
-                                    <ListItem key={item.id} onClick={() => handleActive(item.name)} className={`${category == item.name ? " text-primary-black font-bold  hoverItems" :
-                                        " text-secondary-grey font-medium "} text-base uppercase`}> {item.name} </ListItem>
+                                    <ListItem key={item.id} onClick={() => handleActive(item.name)} className={`${category == item.name ? " text-primary-black  font-bold  hoverItems" :
+                                        " text-secondary-grey font-medium "} lg:text-base text-sm uppercase`}> {item.name} </ListItem>
 
                                 )
                             })
                         }
                     </ul>
-                    <div className='grid lg:grid-cols-4 sm:grid-cols-2 gap-x-7.5 gap-y-15 justify-center w-full mx-auto'>
+                    <div className='grid lg:grid-cols-4 sm:grid-cols-2 gap-x-7.5 lg:gap-y-15 gap-y-5 justify-center w-full mx-auto'>
                         {
                             !loading ? (filterCategoryProduct?.map((item) => <Products item={item} key={item.id} />)) :
                                 <>

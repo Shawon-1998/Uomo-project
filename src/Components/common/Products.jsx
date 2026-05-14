@@ -12,12 +12,12 @@ const Products = ({ item }) => {
         navigate(`/details/${id}`)
     }
     return (
-        <div key={item.id} className='lg:w-82.5 w-50 font-jost  text-primary-black '>
+        <div key={item.id} className='lg:w-82.5 w-full font-jost  text-primary-black '>
             <div className='overflow-hidden cursor-pointer group relative'>
-                <Image onClick={handleProductDetails} src={item.thumbnail || productImage} />
-                <button className='absolute text-primary-white bg-primary-black hover:text-primary-red  block w-full pt-4 pb-2.5 px-27.5 cursor-pointer md:bottom-0 font-medium md:group-hover:visible invisible md:group-hover:bottom-6 linear text-sm duration-300'> ADD TO CART</button>
+                <Image className='w-full object-cover' onClick={handleProductDetails} src={item.thumbnail || productImage} />
+                <button className='absolute text-primary-white bg-primary-black hover:text-primary-red  block w-full py-2 lg:pt-4 lg:pb-2.5 lg:px-27.5 cursor-pointer bottom-0 font-medium group-hover:visible visible lg:invisible group-hover:bottom-6 linear text-sm duration-300'> ADD TO CART</button>
             </div>
-            <div className='mt-3.5 mb-2.25 flex justify-between'>
+            <div className='mt-3.5 mb-2.25 flex justify-between lg:mx-0 mx-3'>
                 <h3 className='text-sm text-secondary-grey '>{item.category}</h3>
                 <button>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,8 +32,8 @@ const Products = ({ item }) => {
                     </svg>
                 </button>
             </div>
-            <h2 className=''>{item.title}</h2>
-            <div className='flex gap-2'>
+            <h2 className='text-sm lg:text-base'>{item.title}</h2>
+            <div className='flex gap-2 text-sm lg:text-base'>
                 <del>${item.price}</del>
                 <h4 className='text-red-500'>${((item.price) - (item.price * (10.48 / 100))).toFixed(2)}</h4>
             </div>

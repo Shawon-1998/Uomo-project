@@ -19,11 +19,11 @@ const Header = () => {
       <nav >
         <Container>
           <div className="flex  items-center justify-between">
-            <div className="md:flex  items-center ">
+            <div className="flex  items-center ">
               <Link to='/'>
                 <Image src={logo} />
               </Link>
-              <ul className="md:flex  gap-11 ml-14">
+              <ul className="flex  gap-11 ml-14">
                 {navItems?.map((items) => (
                   <li onClick={() => handleActive(items.name)} key={items.id}>
                     <Link

@@ -6,7 +6,7 @@ import { Link } from 'react-router'
 
 const StartingImage = () => {
     return (
-        <section className='mb-22.75'>
+        <section className='lg:mb-22.75 mb-10'>
             <Container>
                 <div className='flex lg:flex-row flex-col gap-7.5'>
                     <div className='lg:w-2/4 w-full relative font-jost font-medium  group'>

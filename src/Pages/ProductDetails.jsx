@@ -70,7 +70,7 @@ const ProductDetails = () => {
                                 thumbs={{ swiper: thumbsSwiper }}
                                 modules={[FreeMode, Navigation, Thumbs]}
                                 className="mySwiper2"
-                                className="lg:w-125! w-110! lg:h-130! h-115!"
+                                className="lg:w-125! w-80! lg:h-130! h-85!"
                             >
                                 {singleProduct?.images?.map((item, index) => (
                                     <SwiperSlide key={index}>
@@ -88,7 +88,7 @@ const ProductDetails = () => {
                                 watchSlidesProgress={true}
                                 modules={[FreeMode, Navigation, Thumbs]}
                                 className="mySwiper"
-                                className="lg:w-125! w-110! max-h-30! "
+                                className="lg:w-125! w-80! max-h-30! "
                             >
                                 {singleProduct?.images?.map((item, index) => (
                                     <SwiperSlide key={index}>
@@ -141,7 +141,7 @@ const ProductDetails = () => {
                                     <span className='inline-block leading-6 hoverItems'>SHARE</span>
                                 </div>
                             </div>
-                            <div className='mt-8 mb-49.75 leading-6'>
+                            <div className='mt-8 lg:mb-49.75 leading-6'>
                                 <h3 className='font-jost text-secondary-grey text-[13px]'>SKU:<span className='text-primary-black lowercase'>{singleProduct.sku} </span>
                                 </h3>
                                 <h3 className='uppercase font-jost text-secondary-grey text-[13px]'>Categories:<span className='text-primary-black lowercase'>{singleProduct.category}
