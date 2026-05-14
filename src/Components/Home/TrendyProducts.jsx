@@ -12,7 +12,7 @@ import { Link } from 'react-router'
 const TrendyProducts = () => {
     const [product, setProduct] = useState([]);
     const [filterCategoryProduct, setFilterCategoryProduct] = useState([]);
-    const [category, setCategory] = useState("smartphones");
+    const [category, setCategory] = useState("tops");
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch()
 
@@ -23,7 +23,7 @@ const TrendyProducts = () => {
                     const products = res.data.products
                     setProduct(products)
                     const smartphoneProducts = products.filter(
-                        (item) => item.category === "tablets"
+                        (item) => item.category === "tops"
                     )
 
                     setFilterCategoryProduct(smartphoneProducts)

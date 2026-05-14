@@ -5,7 +5,7 @@ export const productData = [
   // },
   {
     id: 1,
-    name: "tablets",
+    name: "tops",
   },
   {
     id: 2,

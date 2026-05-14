@@ -16,21 +16,21 @@ const ShopBanner = ({ setSelectedCategory }) => {
 
     return (
         <section>
-            <Image className='w-full mx-auto px-15 mb-9' src={shopBannerImg} />
+            <Image className='w-full mx-auto mb-9 object-cover lg:px-15' src={shopBannerImg} />
 
             <Container className='relative'>
 
-                <ul className='flex gap-7.5 overflow-x-auto whitespace-nowrap absolute bottom-30.75 left-0 w-full px-5'>
+                <ul className='flex gap-7.5 overflow-x-auto whitespace-nowrap absolute lg:bottom-30.75 bottom-13 left-0 w-full px-5'>
 
                     <ListItem onClick={() => setSelectedCategory("all")}
-                        className='text-primary-black font-jost font-medium uppercase text-lg hover:text-primary-red shrink-0'>
+                        className='text-primary-black font-jost font-medium uppercase lg:text-lg text-xs hover:text-primary-red shrink-0'>
                         All
                     </ListItem>
 
                     {
                         categories?.map((item) => (
                             <ListItem onClick={() => setSelectedCategory(item)}
-                                className='text-primary-black font-jost font-medium uppercase text-lg hover:text-primary-red shrink-0'
+                                className='text-primary-black font-jost font-medium uppercase lg:text-lg text-xs hover:text-primary-red shrink-0'
                                 key={item} >
                                 {item}
                             </ListItem>

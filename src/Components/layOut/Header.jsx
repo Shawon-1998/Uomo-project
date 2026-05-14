@@ -8,11 +8,10 @@ import { Link } from "react-router";
 
 const Header = () => {
   const cartItems = 3;
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState("Home");
   const handleActive = (name) => {
     setCategory(name)
-    if (name == "Home") {
-    }
+
   };
   return (
     <header className="pt-7.25 pb-4.75 fixed top-0 bg-primary-white z-100 w-full">
@@ -28,7 +27,7 @@ const Header = () => {
                   <li onClick={() => handleActive(items.name)} key={items.id}>
                     <Link
                       to={items.url}
-                      className={`${category == items.name ? " text-primary-black font-bold hoverItems" :
+                      className={`${category === items.name ? " text-primary-black font-bold hoverItems" :
                         " text-secondary-grey font-medium "} text-base`}>
                       {items.name}
                     </Link>
