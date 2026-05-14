@@ -11,7 +11,7 @@ const AllProducts = ({ filteredProducts }) => {
     const visibleProducts = filteredProducts?.slice(0, limit) || []
     return (
         <section>
-            <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2'>
+            <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3'>
                 {
                     visibleProducts?.map((item) => <Products item={item} key={item.id} />)
                 }

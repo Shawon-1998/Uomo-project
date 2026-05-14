@@ -25,14 +25,14 @@ const LimitedEdition = ({ name = "LIMITED", name2 = "EDITION", className }) => {
                     <h2 className='text-center font-jost lg:text-[35px] text-2xl text-primary-black mb-8.25'>{name} <span className='font-bold'>{name2}</span></h2>
                     <Swiper
                         navigation={true}
-                        spaceBetween={20}
+                        spaceBetween={30}
                         pagination={{
                             clickable: true,
                         }}
                         modules={[Navigation]}
                         className="mySwiper"
                         breakpoints={{
-                            400: {
+                            300: {
                                 slidesPerView: 2,
                                 spaceBetween: 10,
                             },

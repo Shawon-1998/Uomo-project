@@ -79,7 +79,6 @@ const ProductDetails = () => {
                                 ))}
                             </Swiper>
 
-
                             <Swiper
                                 onSwiper={setThumbsSwiper}
                                 spaceBetween={10}

@@ -17,7 +17,9 @@ const ShopBanner = ({ setSelectedCategory }) => {
     return (
         <section>
             <Image className='w-full mx-auto px-15 mb-9' src={shopBannerImg} />
+
             <Container className='relative'>
+
                 <ul className='flex gap-7.5 overflow-x-auto whitespace-nowrap absolute bottom-30.75 left-0 w-full px-5'>
 
                     <ListItem onClick={() => setSelectedCategory("all")}
