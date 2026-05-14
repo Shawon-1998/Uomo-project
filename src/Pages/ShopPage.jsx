@@ -6,17 +6,19 @@ import ShortAndView from '../Components/Shop/ShortAndView'
 import Container from '../Components/Ui/Container'
 import AllProducts from '../Components/Shop/AllProducts'
 import axios from 'axios'
-import { useSelector } from 'react-redux'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { filteredProducts } from '../Features/Product/productSlices'
 const ShopPage = () => {
 
     const products = useSelector(state => state.getProduct.value)
     const [selectedCategory, setSelectedCategory] = useState("all")
-
     const filteredProducts =
         selectedCategory === "all"
             ? products
-            : products.filter((item) => item.category === selectedCategory)
+            : products.filter((item) => item.category === selectedCategory);
+
+    const dispatch = useDispatch()
+    // dispatch(filteredProducts(filteredProducts))
     return (
         <main className='mt-25'>
             <ShopBanner setSelectedCategory={setSelectedCategory} />

@@ -1,4 +1,5 @@
 import React from 'react'
+import SideBar from './SideBar'
 
 
 const ShortAndView = ({ filteredProducts }) => {
@@ -15,12 +16,8 @@ const ShortAndView = ({ filteredProducts }) => {
                         <option value="">Children</option>
                     </select>
                 </div>
-                <div className='font-jost font-medium text-sm flex items-center gap-2.5  hover:text-red-500'>
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.44444 9.33333H8.55556V7.77778H5.44444V9.33333ZM0 0V1.55556H14V0H0ZM2.33333 5.44444H11.6667V3.88889H2.33333V5.44444Z" fill="currentColor" />
-                    </svg>
-                    <h3 >FILTER</h3>
+                <div className=' '>
+                    <SideBar />
                 </div>
             </div>
 
