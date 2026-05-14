@@ -23,7 +23,7 @@ const ShopPage = () => {
 
             <Container>
                 <div className='flex justify-between'>
-                    <BreadCrumbs />
+                    <BreadCrumbs className='lg:block hidden' />
                     <ShortAndView filteredProducts={filteredProducts} />
                 </div>
                 <AllProducts filteredProducts={filteredProducts} />

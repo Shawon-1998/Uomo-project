@@ -18,7 +18,7 @@ const Footer = () => {
             placeholder="Your email address"
             className="grow bg-primary-white border-none px-5 py-4 text-sm text-primary-black focus:ring-1 focus:ring-gray-500 outline-none"
           />
-          <button className="bg-[#555555] text-white px-10 py-4 text-xs font-bold tracking-widest hover:bg-[#666666] transition-colors">
+          <button className="bg-[#555555] text-white lg:px-10 px-8 py-4  text-xs font-bold tracking-widest hover:bg-[#666666] transition-colors">
             JOIN
           </button>
         </div>

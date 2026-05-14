@@ -5,9 +5,9 @@ const ShortAndView = ({ filteredProducts }) => {
     return (
         <section>
 
-            <div className='flex lg:gap-15.5 lg:mb-10 gap-3.5 mb-5 items-center'>
+            <div className='flex justify-between lg:gap-15.5 lg:mb-10 gap-33.5 mb-5 items-center'>
                 <div className='after:bg-primary-black relative leading-6 after:absolute after:bottom-0 after:left-0 after:h-0.5   after:content-[""] after:w-full'>
-                    <select className='text-primary-black font-jost font-medium! text-sm border-none outline-none pe-6 uppercase' name="" id="">
+                    <select className='text-primary-black font-jost font-medium! text-sm border-none outline-none lg:pe-6 pe-2 uppercase' name="" id="">
                         <option className='text-primary-black!'
                             value="">DEFAULT SORT</option>
                         <option className='hover:text-primary-black!' value="">Price</option>
@@ -15,13 +15,6 @@ const ShortAndView = ({ filteredProducts }) => {
                         <option value="">Children</option>
                     </select>
                 </div>
-
-                {/* <div className='font-jost font-medium text-sm flex gap-5 border-l-2 border-r-2 pe-7.5 ps-5.75 border-secondary-grey/65'>
-                    <h3 className='hoverItems '>VIEW</h3>
-                    <button className='hoverItems cursor-pointer'>1</button>
-                    <button className='hoverItems cursor-pointer'>2</button>
-                    <button className='hoverItems cursor-pointer'>3</button>
-                </div> */}
                 <div className='font-jost font-medium text-sm flex items-center gap-2.5  hover:text-red-500'>
                     <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -29,8 +22,6 @@ const ShortAndView = ({ filteredProducts }) => {
                     </svg>
                     <h3 >FILTER</h3>
                 </div>
-
-
             </div>
 
         </section>
