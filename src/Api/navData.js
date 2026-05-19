@@ -22,7 +22,7 @@ export const navItems = [
   {
     id: 5,
     name: "LOOKBOOK",
-    url: "/lookbook",
+    url: "/about",
   },
   {
     id: 6,
