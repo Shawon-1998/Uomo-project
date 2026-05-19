@@ -8,6 +8,7 @@ import LimitedEdition from '../Components/Home/LimitedEdition'
 import Marquee from '../Components/Home/Marquee'
 import LatestNews from '../Components/Home/LatestNews'
 import BreadCrumbs from '../Components/common/BreadCrumbs'
+import Delivery from '../Components/Delivery'
 
 
 const Home = () => {
@@ -22,7 +23,7 @@ const Home = () => {
       <LimitedEdition />
       {/* <LatestNews /> */}
       <Marquee />
-
+      <Delivery />
     </>
   )
 }
