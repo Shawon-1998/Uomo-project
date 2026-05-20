@@ -8,33 +8,44 @@ import { Link } from "react-router";
 
 const Header = () => {
   const cartItems = 3;
+  const [showMenu, setShowMenu] = useState(false)
   const [category, setCategory] = useState("Home");
   const handleActive = (name) => {
     setCategory(name)
 
   };
   return (
-    <header className="pt-7.25 pb-4.75 fixed top-0 bg-primary-white z-100 w-full">
+    <header className="lg:pt-7.25 lg:pb-4.75 py-2 fixed top-0 bg-primary-white z-100 w-full">
       <nav >
         <Container>
-          <div className="flex  items-center justify-between">
-            <div className="flex  items-center ">
-              <Link to='/'>
+          <div className="hidden lg:flex items-center justify-between py-5">
+
+            <div className="flex items-center">
+              <Link to="/">
                 <Image src={logo} />
               </Link>
-              <ul className="flex  gap-11 ml-14">
+
+              <ul className="flex gap-11 ml-14">
                 {navItems?.map((items) => (
-                  <li onClick={() => handleActive(items.name)} key={items.id}>
+                  <li
+                    onClick={() => handleActive(items.name)}
+                    key={items.id}
+                  >
                     <Link
                       to={items.url}
-                      className={`${category === items.name ? " text-primary-black font-bold hoverItems" :
-                        " text-secondary-grey font-medium "} text-base`}>
+                      className={`${category === items.name
+                        ? "text-primary-black font-bold hoverItems"
+                        : "text-secondary-grey font-medium"
+                        } text-base`}
+                    >
                       {items.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
+
+
             <ul className="flex items-center gap-7.5">
               <li>
                 <button>
@@ -102,6 +113,109 @@ const Header = () => {
                 </button>
               </li>
             </ul>
+          </div>
+
+
+          <div className="flex lg:hidden items-center justify-between py-5">
+
+
+            <button className="cursor-pointer" onClick={() => setShowMenu(true)}>
+              <svg
+                width="26"
+                height="18"
+                viewBox="0 0 26 18"
+                fill="none"
+              >
+                <rect width="25.0435" height="2" fill="#222222" />
+                <rect y="8" width="20.0348" height="2" fill="#222222" />
+                <rect y="16" width="25.0435" height="2" fill="#222222" />
+              </svg>
+            </button>
+
+
+            <Link to="/">
+              <Image src={logo} />
+            </Link>
+
+
+            <div className="relative px-10">
+              <button>
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.6869 4.6875H15.3021C14.9912 2.05164 12.74 0 10.0174 0C7.29479 0 5.04353 2.05164 4.73264 4.6875H2.3478C1.91556 4.6875 1.56519 5.03727 1.56519 5.46875V19.2188C1.56519 19.6502 1.91556 20 2.3478 20H17.6869C18.1192 20 18.4696 19.6502 18.4696 19.2188V5.46875C18.4696 5.03727 18.1192 4.6875 17.6869 4.6875ZM10.0174 1.5625C11.8754 1.5625 13.4225 2.91621 13.7214 4.6875H6.31332C6.61228 2.91621 8.1593 1.5625 10.0174 1.5625ZM16.9043 18.4375H3.13041V6.25H4.69563V8.59375C4.69563 9.02523 5.046 9.375 5.47824 9.375C5.91047 9.375 6.26084 9.02523 6.26084 8.59375V6.25H13.7739V8.59375C13.7739 9.02523 14.1243 9.375 14.5565 9.375C14.9887 9.375 15.3391 9.02523 15.3391 8.59375V6.25H16.9043V18.4375Z" fill="#222222" />
+                </svg>
+
+              </button>
+              <span className="cartItems">{cartItems}</span>
+            </div>
+          </div>
+
+
+          <div
+            className={`fixed top-0 left-0 w-full h-screen bg-black/50 z-50 transition-all duration-300 ${showMenu
+              ? "opacity-100 visible"
+              : "opacity-0 invisible"
+              }`}
+          >
+            <div
+              className={`w-[280px] h-full bg-white p-6 transition-all duration-300 ${showMenu
+                ? "translate-x-0"
+                : "-translate-x-full"
+                }`}
+            >
+
+
+              <div className="flex items-center justify-between mb-10">
+                <Link to="/">
+                  <Image src={logo} />
+                </Link>
+
+
+                <button className="cursor-pointer" onClick={() => setShowMenu(false)}>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M18 6L6 18"
+                      stroke="#222"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M6 6L18 18"
+                      stroke="#222"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Nav Items */}
+              <ul className="flex flex-col gap-6">
+                {navItems?.map((items) => (
+                  <li
+                    key={items.id}
+                    onClick={() => {
+                      handleActive(items.name)
+                      setShowMenu(false)
+                    }}
+                  >
+                    <Link
+                      to={items.url}
+                      className={`${category === items.name
+                        ? "text-primary-black font-bold"
+                        : "text-secondary-grey font-medium"
+                        } text-lg`}
+                    >
+                      {items.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Container>
       </nav>

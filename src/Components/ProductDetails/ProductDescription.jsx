@@ -69,12 +69,12 @@ const ProductDescription = ({ singleProduct }) => {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`
-                                    ${activeTab === tab.id
+                            ${activeTab === tab.id
                                         ? "text-primary-black font-medium border-black"
                                         : "text-gray-500"
                                     }
-                                    pb-2 hoverItems
-                                `}
+                            pb-2 hoverItems
+                        `}
                             >
                                 {tab.label}
                             </button>
@@ -105,14 +105,11 @@ const ProductDescription = ({ singleProduct }) => {
                                                         features.map((item, index) => (
                                                             <div
                                                                 key={index}
-                                                                className='flex gap-3 items-center'
-                                                            >
+                                                                className='flex gap-3 items-center'     >
                                                                 <p>
-                                                                    <span className='text-5xl text-secondary-grey'>
-                                                                        .
-                                                                    </span>
-                                                                    {item}
-                                                                </p>
+                                                                    <span className='text-5xl
+                        text-secondary-grey'>. </span>
+                                                                    {item}       </p>
                                                             </div>
                                                         ))
                                                     }
@@ -155,8 +152,8 @@ const ProductDescription = ({ singleProduct }) => {
                                                 <div>
                                                     <Image src={reviewsImg} />
                                                 </div>
-                                                <div className='flex gap-30'>
-                                                    <h3 className='w-150'>
+                                                <div className='flex items-center justify-between lg:gap-30'>
+                                                    <h3 className='w-full'>
                                                         {item.reviewerName}
                                                     </h3>
                                                     <span>
@@ -167,7 +164,7 @@ const ProductDescription = ({ singleProduct }) => {
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div className='ms-24'>
+                                            <div className='lg:ms-24'>
                                                 <p>{item.date}</p>
                                                 <p className='mt-5'>
                                                     {item.comment}

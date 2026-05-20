@@ -43,7 +43,7 @@ const Banner3 = () => {
 
     return (
         <>
-            <div className="navigation-wrapper relative">
+            <div className="navigation-wrapper relative pt-20">
                 <div ref={sliderRef} className="keen-slider">
                     {
                         BannerData?.map((item, index) => (

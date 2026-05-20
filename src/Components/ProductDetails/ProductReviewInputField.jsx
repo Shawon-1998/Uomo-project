@@ -14,7 +14,7 @@ const ProductReviewInputField = () => {
                     />
                 </div>
                 <form action="" className='mx-5'>
-                    <textarea className="border border-primary-black/25 textarea w-full h-53.25" placeholder=""></textarea>
+                    <textarea className="border border-primary-black/25 textarea w-full lg:h-53.25" placeholder=""></textarea>
                     <div className="relative w-full mt-7.5">
                         <label
                             className=" absolute -top-3 left-4 bg-white   px-2 text-sm text-primary-black "

@@ -15,9 +15,9 @@ const Products = ({ item }) => {
         <div key={item.id} className=' h-73 w-full lg:h-111.25 lg:w-82.5 font-jost  text-primary-black  rounded-2xl boxShadow p-5 my-5'>
             <div className='overflow-hidden cursor-pointer group relative'>
                 <Image className='w-full object-cover' onClick={handleProductDetails} src={item.thumbnail || productImage} />
-                <button className='absolute text-primary-white bg-primary-black hover:text-primary-red  block py-2 lg:pt-4 lg:pb-2.5 w-full rounded-lg cursor-pointer bottom-0 font-medium group-hover:visible visible lg:invisible lg:group-hover:bottom-6 linear text-sm duration-300'> ADD TO CART</button>
+                <button className='absolute text-primary-white bg-primary-black hover:text-primary-red  block py-2 lg:pt-4 lg:pb-2.5 w-full rounded-lg cursor-pointer bottom-6 font-medium group-hover:visible visible lg:invisible lg:group-hover:bottom-6 linear text-sm duration-300'> ADD TO CART</button>
             </div>
-            <div className='mt-3.5 mb-2.25 flex justify-between '>
+            <div className='lg:mt-3.5 lg:mb-2.25 flex justify-between '>
                 <h3 className='text-sm text-secondary-grey '>{item.category}</h3>
                 <button>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@ const Products = ({ item }) => {
                 </button>
             </div>
             <h2 className='text-sm lg:text-base'>{item.title}</h2>
-            <div className='flex gap-2 text-sm lg:text-base'>
+            <div className='flex gap-2 text-xs lg:text-base'>
                 <del>${item.price}</del>
                 <h4 className='text-red-500'>${((item.price) - (item.price * (10.48 / 100))).toFixed(2)}</h4>
             </div>
