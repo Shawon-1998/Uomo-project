@@ -70,10 +70,10 @@ const ProductDescription = ({ singleProduct }) => {
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`
                             ${activeTab === tab.id
-                                        ? "text-primary-black font-medium border-black"
+                                        ? "text-primary-black font-medium border-black hoverItems"
                                         : "text-gray-500"
                                     }
-                            pb-2 hoverItems
+                            pb-2 
                         `}
                             >
                                 {tab.label}
@@ -92,27 +92,22 @@ const ProductDescription = ({ singleProduct }) => {
                                 <p className='max-w-232.5 leading-6.75'>
                                     {singleProduct?.description}
                                 </p>
-                                <div className='flex justify-between text-primary-black font-jost'>
+                                <div className='lg:flex justify-between text-primary-black font-jost'>
                                     {
                                         ["Why choose product?", "Sample Number List"]
                                             .map((title, index) => (
                                                 <div key={index}>
-                                                    <h3 className='font-medium my-10'>
-                                                        {title}
-                                                    </h3>
-
+                                                    <h3 className='font-medium my-10'>  {title} </h3>
                                                     {
                                                         features.map((item, index) => (
                                                             <div
                                                                 key={index}
                                                                 className='flex gap-3 items-center'     >
                                                                 <p>
-                                                                    <span className='text-5xl
-                        text-secondary-grey'>. </span>
-                                                                    {item}       </p>
-                                                            </div>
-                                                        ))
-                                                    }
+                                                                    <span className='text-5xl   text-secondary-grey'>. </span>
+                                                                    {item}
+                                                                </p>
+                                                            </div>))}
                                                 </div>
                                             ))
                                     }

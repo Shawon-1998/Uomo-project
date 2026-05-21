@@ -35,7 +35,7 @@ const Header = () => {
                       to={items.url}
                       className={`${category === items.name
                         ? "text-primary-black font-bold hoverItems"
-                        : "text-secondary-grey font-medium"
+                        : "text-primary-black font-medium"
                         } text-base`}
                     >
                       {items.name}
@@ -44,8 +44,6 @@ const Header = () => {
                 ))}
               </ul>
             </div>
-
-
             <ul className="flex items-center gap-7.5">
               <li>
                 <button>
@@ -75,12 +73,10 @@ const Header = () => {
                       </clipPath>
                     </defs>
                   </svg>
-
                 </button>
               </li>
               <li>
                 <button>
-
                   <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_6_54)">
                       <path d="M18.4252 3.30806C16.2463 1.13349 12.7016 1.13349 10.5232 3.30806L10.0172 3.81285L9.51156 3.30806C7.33321 1.13319 3.78822 1.13319 1.60986 3.30806C-0.524272 5.43848 -0.53813 8.81543 1.57772 11.1634C3.50752 13.3041 9.19902 17.929 9.44051 18.1248C9.60444 18.2578 9.8017 18.3226 9.99777 18.3226C10.0043 18.3226 10.0107 18.3226 10.0169 18.3223C10.2198 18.3317 10.4241 18.2622 10.5934 18.1248C10.8349 17.929 16.5269 13.3041 18.4573 11.1631C20.5729 8.81543 20.559 5.43848 18.4252 3.30806ZM17.1423 9.98189C15.6377 11.6505 11.5018 15.0919 10.0169 16.3131C8.53207 15.0922 4.39708 11.6511 2.89275 9.98218C1.41673 8.34448 1.40287 6.01215 2.86062 4.55694C3.60511 3.81403 4.58284 3.44228 5.56056 3.44228C6.53829 3.44228 7.51601 3.81373 8.26051 4.55694L9.37269 5.66718C9.50508 5.79934 9.67196 5.87822 9.8471 5.90589C10.1313 5.96682 10.4398 5.88764 10.6609 5.66748L11.7737 4.55694C13.2629 3.07082 15.6854 3.07112 17.1739 4.55694C18.6316 6.01215 18.6177 8.34448 17.1423 9.98189Z" fill="#222222" />
@@ -91,7 +87,6 @@ const Header = () => {
                       </clipPath>
                     </defs>
                   </svg>
-
                 </button>
               </li>
               <li className="relative">
@@ -99,9 +94,8 @@ const Header = () => {
                   <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17.6869 4.6875H15.3021C14.9912 2.05164 12.74 0 10.0174 0C7.29479 0 5.04353 2.05164 4.73264 4.6875H2.3478C1.91556 4.6875 1.56519 5.03727 1.56519 5.46875V19.2188C1.56519 19.6502 1.91556 20 2.3478 20H17.6869C18.1192 20 18.4696 19.6502 18.4696 19.2188V5.46875C18.4696 5.03727 18.1192 4.6875 17.6869 4.6875ZM10.0174 1.5625C11.8754 1.5625 13.4225 2.91621 13.7214 4.6875H6.31332C6.61228 2.91621 8.1593 1.5625 10.0174 1.5625ZM16.9043 18.4375H3.13041V6.25H4.69563V8.59375C4.69563 9.02523 5.046 9.375 5.47824 9.375C5.91047 9.375 6.26084 9.02523 6.26084 8.59375V6.25H13.7739V8.59375C13.7739 9.02523 14.1243 9.375 14.5565 9.375C14.9887 9.375 15.3391 9.02523 15.3391 8.59375V6.25H16.9043V18.4375Z" fill="#222222" />
                   </svg>
-
                 </button>
-                <span className="cartItems">{cartItems}</span>
+                <span className="font-jost text-primary-white bg-thirdColor absolute -right-1.75 -bottom-0.75 flex h-4 w-4 items-center justify-center rounded-full text-[10px] font-medium">{cartItems}</span>
               </li>
               <li>
                 <button>
@@ -114,11 +108,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-
-
           <div className="flex lg:hidden items-center justify-between py-5">
-
-
             <button className="cursor-pointer" onClick={() => setShowMenu(true)}>
               <svg
                 width="26"
@@ -131,44 +121,34 @@ const Header = () => {
                 <rect y="16" width="25.0435" height="2" fill="#222222" />
               </svg>
             </button>
-
-
             <Link to="/">
               <Image src={logo} />
             </Link>
-
-
             <div className="relative px-10">
               <button>
                 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M17.6869 4.6875H15.3021C14.9912 2.05164 12.74 0 10.0174 0C7.29479 0 5.04353 2.05164 4.73264 4.6875H2.3478C1.91556 4.6875 1.56519 5.03727 1.56519 5.46875V19.2188C1.56519 19.6502 1.91556 20 2.3478 20H17.6869C18.1192 20 18.4696 19.6502 18.4696 19.2188V5.46875C18.4696 5.03727 18.1192 4.6875 17.6869 4.6875ZM10.0174 1.5625C11.8754 1.5625 13.4225 2.91621 13.7214 4.6875H6.31332C6.61228 2.91621 8.1593 1.5625 10.0174 1.5625ZM16.9043 18.4375H3.13041V6.25H4.69563V8.59375C4.69563 9.02523 5.046 9.375 5.47824 9.375C5.91047 9.375 6.26084 9.02523 6.26084 8.59375V6.25H13.7739V8.59375C13.7739 9.02523 14.1243 9.375 14.5565 9.375C14.9887 9.375 15.3391 9.02523 15.3391 8.59375V6.25H16.9043V18.4375Z" fill="#222222" />
                 </svg>
-
               </button>
-              <span className="cartItems">{cartItems}</span>
+              <span className="font-jost text-primary-white bg-thirdColor absolute right-8.75 -bottom-0.75 flex h-4 w-4 items-center justify-center rounded-full text-[10px] font-medium">{cartItems}</span>
             </div>
           </div>
 
-
           <div
-            className={`fixed top-0 left-0 w-full h-screen bg-black/50 z-50 transition-all duration-300 ${showMenu
-              ? "opacity-100 visible"
-              : "opacity-0 invisible"
+            className={`fixed top-0 left-0 w-full h-screen bg-black/50 z-50 transition-all ease-in duration-200 ${showMenu
+              ? "opacity-100 visible ease-in duration-300"
+              : "opacity-0 invisible ease-in duration-300 "
               }`}
           >
             <div
-              className={`w-[280px] h-full bg-white p-6 transition-all duration-300 ${showMenu
+              className={`w-[80%] h-full bg-white p-6 transition-all duration-300 ${showMenu
                 ? "translate-x-0"
                 : "-translate-x-full"
                 }`}
             >
 
 
-              <div className="flex items-center justify-between mb-10">
-                <Link to="/">
-                  <Image src={logo} />
-                </Link>
-
+              <div className="flex justify-between items-center mb-10">
 
                 <button className="cursor-pointer" onClick={() => setShowMenu(false)}>
                   <svg
@@ -191,9 +171,19 @@ const Header = () => {
                     />
                   </svg>
                 </button>
+                <Link to="/">
+                  <Image src={logo} />
+                </Link>
+                <div className="relative px-10">
+                  <button>
+                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.6869 4.6875H15.3021C14.9912 2.05164 12.74 0 10.0174 0C7.29479 0 5.04353 2.05164 4.73264 4.6875H2.3478C1.91556 4.6875 1.56519 5.03727 1.56519 5.46875V19.2188C1.56519 19.6502 1.91556 20 2.3478 20H17.6869C18.1192 20 18.4696 19.6502 18.4696 19.2188V5.46875C18.4696 5.03727 18.1192 4.6875 17.6869 4.6875ZM10.0174 1.5625C11.8754 1.5625 13.4225 2.91621 13.7214 4.6875H6.31332C6.61228 2.91621 8.1593 1.5625 10.0174 1.5625ZM16.9043 18.4375H3.13041V6.25H4.69563V8.59375C4.69563 9.02523 5.046 9.375 5.47824 9.375C5.91047 9.375 6.26084 9.02523 6.26084 8.59375V6.25H13.7739V8.59375C13.7739 9.02523 14.1243 9.375 14.5565 9.375C14.9887 9.375 15.3391 9.02523 15.3391 8.59375V6.25H16.9043V18.4375Z" fill="#222222" />
+                    </svg>
+                  </button>
+                  <span className="font-jost text-primary-white bg-thirdColor absolute right-8.75 -bottom-0.75 flex h-4 w-4 items-center justify-center rounded-full text-[10px] font-medium">{cartItems}</span>
+                </div>
               </div>
 
-              {/* Nav Items */}
               <ul className="flex flex-col gap-6">
                 {navItems?.map((items) => (
                   <li
@@ -207,8 +197,8 @@ const Header = () => {
                       to={items.url}
                       className={`${category === items.name
                         ? "text-primary-black font-bold"
-                        : "text-secondary-grey font-medium"
-                        } text-lg`}
+                        : "text-primary-black font-medium"
+                        } text-sm`}
                     >
                       {items.name}
                     </Link>

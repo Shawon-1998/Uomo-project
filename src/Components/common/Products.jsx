@@ -14,8 +14,8 @@ const Products = ({ item }) => {
     return (
         <div key={item.id} className=' h-73 w-full lg:h-111.25 lg:w-82.5 font-jost  text-primary-black  rounded-2xl boxShadow p-2 my-3 '>
             <div className='overflow-hidden cursor-pointer group relative'>
-                <Image className='w-full object-cover' onClick={handleProductDetails} src={item.thumbnail || productImage} />
-                <button className='absolute text-primary-white bg-primary-black hover:text-primary-red  block py-2 lg:pt-4 lg:pb-2.5 w-full rounded-lg cursor-pointer bottom-0 font-medium group-hover:visible visible lg:invisible lg:group-hover:bottom-6 linear text-sm duration-300'> ADD TO CART</button>
+                <Image className='w-full object-cover mb-5' onClick={handleProductDetails} src={item.thumbnail || productImage} />
+                <button className='absolute text-primary-white bg-primary-black hover:text-primary-red  block py-2 lg:pt-4 lg:pb-2.5 w-full rounded-lg cursor-pointer bottom-0 font-medium  group-hover:visible visible lg:invisible lg:group-hover:bottom-6 linear text-sm duration-300'> ADD TO CART</button>
             </div>
             <div className='mt-3.5 mb-2.25 flex justify-between '>
                 <h3 className='text-sm text-secondary-grey '>{item.category}</h3>
